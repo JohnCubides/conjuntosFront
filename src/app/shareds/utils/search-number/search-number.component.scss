@@ -1,0 +1,61 @@
+@import "instance";
+
+.changes-number {
+    display: grid;
+    grid-template-columns: 52px 35px;
+    height: 32px;
+
+    input[type="number"]::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }
+
+    input[type=number] {
+        -moz-appearance: textfield;
+    }
+
+    input {
+        border-radius: 5px 0px 0px 5px;
+        background-color: $c14;
+        color: $c1;
+        padding-left: 8px;
+        padding-right: 8px;
+        text-align: right;
+        width: 52px;
+    }
+
+    input:focus {
+        background-color: #002d3a;
+    }
+
+    .icon {
+        background-color: $c13;
+        border-radius: 0px 5px 5px 0px;
+        align-items: center;
+        justify-content: center;
+        display: flex;
+        width: 35px;
+        cursor: pointer;
+
+        &:hover { background-color: $c28; }
+    }
+
+    @media screen and (max-width: 320px) {
+        grid-template-columns: 42px 0px;
+        input {
+            width: 42px;
+        }
+    }
+}
+
+
+@media screen and (max-width: 576px) {
+    .changes-number {
+        grid-template-columns: 52px 0px;
+        .hidemobile {
+            display: none;
+        }
+        input {
+            border-radius: 5px;
+        }
+    }
+}

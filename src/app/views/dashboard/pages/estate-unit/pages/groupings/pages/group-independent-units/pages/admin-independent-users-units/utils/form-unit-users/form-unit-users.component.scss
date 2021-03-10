@@ -1,0 +1,121 @@
+@import "instance";
+@import "instance";
+.form-associated-person {
+    @include position;
+    display: block;
+    // column-count: 2;
+    top: 60px;
+    form {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas: "row1c1 row1c2" "row2c1 row2c2" "row3c1 row3c2" "row4c1 row4c2" "row5c1 row5c2" " ..... row6c2";
+        grid-template-rows: minmax(75px, auto);
+        margin: 60px auto 0;
+        width: 60%;
+        height: 60%;
+        .input {
+            padding: 0px 10px 0px 10px;
+        }
+    }
+    .data {
+        // display: grid;
+        // grid-gap: 18px 10px;
+        h3 {
+            color: $c15;
+            font-size: 0.75rem;
+        }
+        .select {
+            border-radius: 5px 5px 0px 0px;
+            height: 44px;
+            background: $c28;
+            color: $c1;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        input {
+            @include wh(100%);
+            border-radius: 5px 5px 0px 0px;
+            background-color: $c28;
+            color: $c1;
+            padding-left: 8px;
+            padding-right: 8px;
+            height: 44px;
+            &.ng-invalid.ng-touched {
+                border-style: solid;
+                border-width: 2px;
+                border-color: $c27;
+            }
+        }
+        .text_error {
+            color: $c27;
+            height: 16px;
+            @include font(szrem(12), $f1, 300);
+        }
+    }
+    .submit {
+        margin-top: 5vh;
+        button {
+            float: right;
+            @include button_1( ( colorhover: $c12, colordisabled: $c30, textcolordisabled: $c31, ));
+        }
+    }
+    label {
+        @include font(szrem(12), $f1, normal);
+        @include wh(100%);
+        @include flex;
+        margin-left: 5px;
+        color: $c15;
+    }
+    input:-webkit-autofill {
+        -webkit-box-shadow: 0 0 0px 1000px $c28 inset;
+        -moz-box-shadow: 0 0 0px 1000px $c28 inset;
+        -o-box-shadow: 0 0 0px 1000px $c28 inset;
+        box-shadow: 0 0 0px 1000px $c28 inset;
+        -webkit-text-fill-color: white;
+    }
+}
+
+//grid
+.row1c1 {
+    grid-area: row1c1;
+}
+
+.row1c2 {
+    grid-area: row1c2;
+}
+
+.row2c1 {
+    grid-area: row2c1;
+}
+
+.row2c2 {
+    grid-area: row2c2;
+}
+
+.row3c1 {
+    grid-area: row3c1;
+}
+
+.row3c2 {
+    grid-area: row3c2;
+}
+
+.row4c1 {
+    grid-area: row4c1;
+}
+
+.row4c2 {
+    grid-area: row4c2;
+}
+
+.row5c1 {
+    grid-area: row5c1;
+}
+
+.row5c2 {
+    grid-area: row5c2;
+}
+
+.row6c2 {
+    grid-area: row6c2;
+}

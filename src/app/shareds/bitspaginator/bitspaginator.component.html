@@ -1,0 +1,12 @@
+<div class="container">
+    <div #pagination>
+        <div *ngFor="let item of listButton" class="rombo {{ item.class }}">
+            <div class="contenido {{ item.type }} {{ item.class }}" id="{{ item.id }}">
+                <div class="texto" *ngIf="item.type === 'text'">
+                    {{ item.text }}
+                </div>
+                <mat-icon class="{{ item.class }}" *ngIf="item.type === 'button'" svgIcon="{{ item.svgIcon }}"></mat-icon>
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="container_rol_create" id="rol_create_container">
+    <h1 class="title_component" id="h--tittle-groupings-{{ seeView }}">{{tittle | translate}}</h1>
+
+    <form [formGroup]="formGroups" id="form--groupings-{{ seeView }}" #form="ngForm" (ngSubmit)="sendData()">
+        <div class="input">
+            <label id="lbl--name--grouping-{{seeView}}">Nombre de agrupación*</label>
+            <input type="text" minlength="1" maxlength="50" name="name" id="ipt--name-grouping-{{seeView}}"
+                class="{{ errorMensagge !== '' && errorMensagge ? 'error-mensaje' : ''}}" formControlName="name"
+                required>
+            <p class="error-mensaje" id="p--name-grouping-{{seeView}}"
+                *ngIf="formGroups.get('name').hasError('required') && formGroups.get('name').touched">
+                * Campo requerido</p>
+        </div>
+        <div class="input">
+            <label id="lbl--independentAmount--grouping-{{seeView}}">Número de unidades independientes*</label>
+            <input type="text" minlength="1" maxlength="5" name="independentAmount"
+                id="ipt--independentAmount-grouping-{{seeView}}"
+                class="{{ errorMensagge !== '' && errorMensagge ? 'error-mensaje' : ''}}"
+                formControlName="independentAmount" required (keypress)="validateInput('independentAmount')"
+                (keyup)="validateInput('independentAmount')" (keydown)="validateInput('independentAmount')"
+                (focus)="validateInput('independentAmount')">
+            <p class="error-mensaje" id="p--independentAmount-grouping-{{seeView}}"
+                *ngIf="formGroups.get('independentAmount').hasError('required') && formGroups.get('independentAmount').touched">
+                * Campo requerido</p>
+        </div>
+        <div class="btn-g">
+            <button type="submit" id="btn--save-grouping-{{seeView}}" [disabled]="formGroups.invalid">Guardar</button>
+        </div>
+    </form>
+</div>

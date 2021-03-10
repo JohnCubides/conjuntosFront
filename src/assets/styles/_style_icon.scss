@@ -1,0 +1,54 @@
+/** Class general for icons **/
+
+.item_form {
+    mat-icon {
+        .cls-1 {
+            fill: #143642;
+        }
+    }
+}
+
+mat-icon {
+    .cls-1 {
+        fill: #ffffff;
+    }
+}
+
+.changes-number {
+    .icon {
+        &:hover {
+            .cls-1 {
+                fill: #12AC9E;
+                opacity: 0.4;
+            }
+        }
+    }
+}
+
+
+
+.c-modal_container {
+    #btnCloseModal {
+        mat-icon {
+            width: 30px;
+            height: 30px;
+            .cls-1 {
+                fill: #143642;
+                opacity: 1;
+                line-height: 60px
+            }
+        }
+    }
+    .header-modal {
+        #btnCloseModalMobile {
+            mat-icon {
+                width: 45px;
+                height: 45px;
+                .cls-1 {
+                    fill: #ffffff;
+                    opacity: 1;
+                }
+            }
+        }
+    }
+}

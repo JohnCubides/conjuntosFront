@@ -1,0 +1,29 @@
+.login_layout {
+    max-width: 1920px;
+    margin: 0 auto;
+    display: grid;
+    grid-template: {
+        areas: "slider main";
+        columns: 1fr minmax(500px, 1fr);
+        rows: 100vh;
+    }
+
+    @include brp($b5) {
+        grid-template-areas: "main";
+        grid-template-columns: 1fr;
+        grid-template-rows: 100vh;
+    }
+
+    .slider_layout {
+        @include brp($b5) {
+            display: none;
+        }
+    }
+
+    .main_layout {
+        @include brp($b5) {
+            height: max-content;
+            min-height: 100vh;
+        }
+    }
+}

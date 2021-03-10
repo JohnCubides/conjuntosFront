@@ -1,0 +1,42 @@
+@import "./../../../../../../../assets/sass/instance";
+.admin-container {
+    display: flex;
+    margin-top: 63px;
+    justify-content: center;
+    align-items: center;
+}
+.filter_container {
+    display: block;
+    margin-top: 80px;
+    .filter_state {
+        @include flex;
+        @include align-items(center);
+        // @include justify-content(center);
+        height: 28px;
+        margin-left: 122px;
+        margin-top: 36px;
+        .state {
+            display: block;
+        }
+    }
+    .footer_button {
+        @include flex;
+        @include justify-content(flex-end);
+        padding-top: 28px;
+        .button_filter {
+            display: flex;
+            button {
+                @include button_1((width: 176px, height: 35px, colorhover: $c12));
+                @include font(szrem(16), $f1, normal);
+                position: relative;
+                &.search {
+                    z-index: 2;
+                    left: 33px;
+                }
+                &.delete_filter {
+                    z-index: 1;
+                }
+            }
+        }
+    }
+}

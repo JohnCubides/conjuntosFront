@@ -1,0 +1,23 @@
+<div class="container_rol_create">
+    <h1 class="title_component" id="h--tittle-form-role-{{ seeView }}">{{tittle | translate}}</h1>
+    <form [formGroup]="formRol"  #form="ngForm"  id="form--rol-{{ seeView }}">
+        <div class="input">
+            <label for="ipt--name-rol-{{ seeView }}" id="lbl--name-form-role-{{ seeView }}">{{ 'ROL_NAME' | translate }}*</label>
+            <input type="text" maxlength="30" name="gender" class="{{ errorMensagge !== '' && errorMensagge ? 'error-mensaje' : ''}}" formControlName="rol" id="ipt--name-form-role-{{ seeView }}" required (keypress)="validateInput()" (keyup)="validateInput()" (keydown)="validateInput()"
+                (focus)="validateInput()">
+            <p *ngIf="errorMensagge !== '' && errorMensagge" class="error-mensaje" id="p--error-enssage-form-role-{{ seeView }}">
+                {{ errorMensagge | translate }}
+            </p>
+        </div>
+        <p id="p--permits-form-role-{{ seeView }}">{{ 'PERMITS' | translate }}</p>
+        <div class="content">
+            <div *ngFor="let permits of rolPermissions.permits; let i = index" class="properties-tree">
+                <app-tree-permissions [idNodeFather]="i" [nodePermits]="permits" class="sizelist tree_permissions" [disabled]="disabledConsult"></app-tree-permissions>
+                <div class="line-permits" *ngIf="i%2 === 0 && rolPermissions.permits.length > 1 && desktopLine()"></div>
+            </div>
+        </div>
+        <div class="btn-g" *ngIf="!disabledConsult">
+            <button type="submit" id="btn--save-form-role" (click)="sendPermissionsAndRol()" [disabled]="formRol.invalid">{{ 'SAVE' | translate }}</button>
+        </div>
+    </form>
+</div>

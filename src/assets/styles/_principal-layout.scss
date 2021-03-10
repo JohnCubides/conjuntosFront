@@ -1,0 +1,48 @@
+.cdk-overlay-connected-position-bounding-box {
+  transform: translate(0, -33px);
+}
+
+.menu-profile {
+  .mat-menu-content {
+    background-color: #005065;
+    &:not(:empty) {
+      padding-bottom: 0;
+    }
+  }
+  .mat-menu-item {
+    color: white;
+    &:hover {
+      background-color: #276980;
+    }
+  }
+}
+
+.mat-expansion-panel {
+  .mat-expansion-panel-body {
+    padding: 0;
+  }
+
+  .mat-expansion-panel-header {
+    padding: 0px 15px;
+  }
+}
+
+.mat-expansion-indicator:after{
+  color: #ffffff;
+}
+
+.mat-expansion-panel:not([class*=mat-elevation-z]) {
+  box-shadow: none;
+}
+
+main {
+  & .mat-drawer-container {
+    & .mat-drawer {
+      &.mat-drawer-opened {
+        @include brp($b5) {
+          position: relative;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,2 @@
+<app-form-create [seeView]="'modify'" (formEmit)='formEmit($event)' [groupForm]='group' (resultForm)="sendGroupUnit($event)" [tittle]='header' *ngIf="group"></app-form-create>
+<app-modal-notification [modalNotification]='modal' *ngIf="modal.actionModal"></app-modal-notification>

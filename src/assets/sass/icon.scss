@@ -1,0 +1,226 @@
+@import "instance";
+.icon_person_1 {
+    &:before {
+        @include icon_svg(person, 15px, 17px, $c6);
+        content: "";
+    }
+}
+
+.icon_padlock_1 {
+    &:before {
+        @include icon_svg(padlock, 15px, 18px, $c6);
+        content: "";
+    }
+}
+
+.icon_alert_1 {
+    &:before {
+        @include icon_svg(alert_1, 12px, 12px, $c10);
+        content: "";
+    }
+}
+
+.icon_edit_2 {
+    &:before {
+        @include icon_svg(edit2, 18px, 18px, $c6);
+        content: "";
+    }
+}
+
+.icon_help_1 {
+    &:before {
+        @include icon_svg(help, 25px, 25px, $c12);
+        content: "";
+    }
+    &:hover {
+        &:before {
+            @include icon_svg(help_2, 25px, 25px, $c12);
+        }
+    }
+}
+
+.icon_back_1 {
+    &:before {
+        @include icon_svg(back, 30px, 30px, $c6);
+        content: "";
+    }
+    &:hover {
+        &:before {
+            @include icon_svg(back, 30px, 30px, $c1);
+        }
+    }
+}
+
+.icon_delete {
+    &:before {
+        @include icon_svg(delete, 20px, 20px, $c1);
+        @include hv-center;
+        content: "";
+    }
+    &:hover {
+        &:before {
+            @include icon_svg(delete, 20px, 20px, $c33);
+            @include hv-center;
+            @include border-radius(50%);
+        }
+    }
+}
+
+.icon_view {
+    &:before {
+        @include icon_svg(view, 20px, 20px, $c1);
+        @include hv-center;
+        content: "";
+    }
+    &:hover {
+        &:before {
+            @include icon_svg(view, 20px, 20px, $c33);
+            @include border-radius(50%);
+            @include hv-center;
+        }
+    }
+}
+
+.icon_edit {
+    &:before {
+        @include icon_svg(edit, 20px, 20px, $c1);
+        @include hv-center;
+        content: "";
+    }
+    &:hover {
+        &:before {
+            @include icon_svg(edit, 20px, 20px, $c33);
+            @include border-radius(50%);
+            @include hv-center;
+        }
+    }
+}
+
+.icon_filter {
+    &:before {
+        @include icon_svg(filter, 25px, 25px, $c1);
+        @include hv-center;
+        content: "";
+    }
+}
+
+.icon_close {
+    &:before {
+        @include icon_svg(close, 25px, 25px, $c1);
+        @include hv-center;
+        content: "";
+    }
+}
+
+// TODO: Revisar que el icono no se use en toros lados
+.icon_close_1 {
+    &:before {
+        @include icon_svg(close, 20px, 20px, $c10);
+        content: "";
+    }
+}
+
+.icon_search {
+    &:before {
+        @include icon_svg(search, 25px, 25px, $c1);
+        @include hv-center;
+        content: "";
+    }
+}
+
+.icon_select {
+    &:after {
+        @include icon_svg(select, 16px, 16px, $c1);
+        @include position(relative);
+        content: "";
+    }
+}
+
+// TODO: Revisar que el icono no se use en toros lados
+.icon_check_1 {
+    &:before {
+        @include icon_svg(check, 20px, 20px, $c25);
+        content: "";
+    }
+}
+
+.icon_add {
+    &:before {
+        @include icon_svg(plus, 22px, 22px, $c1);
+        @include hv-center;
+        content: "";
+    }
+}
+
+.icon_enter {
+    &:before {
+        @include icon_svg(enter, 20px, 20px, $c1);
+        position: relative;
+        content: "";
+    }
+    &:hover {
+        &:before {
+            @include icon_svg(enter, 20px, 20px, $c33);
+            @include position(relative);
+        }
+    }
+}
+
+.icon_home {
+    &:before {
+        @include icon_svg(home, 20px, 20px, $c1);
+        @include position(absolute, auto, auto);
+        content: "";
+    }
+}
+
+.icon_triangle {
+    &:before {
+        @include icon_svg(triangle, 20px, 20px, $c1);
+        @include hv-center;
+        content: "";
+    }
+    &:hover {
+        &:before {
+            @include icon_svg(triangle, 20px, 20px, $c2);
+            @include hv-center;
+        }
+    }
+}
+
+.icon_triangle2 {
+    &:before {
+        @include icon_svg(triangle, 20px, 20px, $c1);
+        @include hv-center;
+        @include transform(translate(-50%, -50%) rotate(180deg));
+        content: "";
+    }
+    &:hover {
+        &:before {
+            @include icon_svg(triangle, 20px, 20px, $c2);
+            @include hv-center;
+            @include transform(translate(-50%, -50%) rotate(180deg));
+        }
+    }
+}
+
+.icon_password_confirm_1 {
+    &:before {
+        @include icon_svg(password_confirm, 15px, 18px, $c6);
+        content: "";
+    }
+}
+
+.icon_rotate_right_1 {
+    &:before {
+        @include icon_svg(person, 15px, 17px, $c6);
+        content: "";
+    }
+}
+
+.icon_rotate_left_1 {
+    &:before {
+        @include icon_svg(person, 15px, 17px, $c6);
+        content: "";
+    }
+}

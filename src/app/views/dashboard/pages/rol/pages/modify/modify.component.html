@@ -1,0 +1,2 @@
+<app-form-rol (formEmit)='formEmit($event)' [tittle]="'Modificar Rol'" [seeView]="'modify'" [rolPermissions]='jsonRol' [errorMensagge]='errorMensagge' (resultError)='errorRol()' (resultPermits)='sendPermits($event)' *ngIf="loading"></app-form-rol>
+<app-modal-notification [modalNotification]='modal' *ngIf="modal.actionModal"></app-modal-notification>

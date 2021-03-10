@@ -1,0 +1,53 @@
+.camContent {
+    max-width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-areas: " row1c1 row1c2";
+    grid-template-rows: minmax(75px, auto);
+    padding: 15px;
+}
+
+@media screen and (max-width: 576px) {
+    .camContent {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: " row1c1 " " row1c2 ";
+        grid-template-rows: minmax(75px, auto);
+        .contentSteam,
+        .contentPhoto {
+            min-width: 100%;
+            height: 200px;
+            button {
+                display: block;
+            }
+            video,
+            canvas {
+                width: 65%;
+            }
+        }
+    }
+}
+
+.contentSteam,
+.contentPhoto {
+    width: 100%;
+    height: 100%;
+    button {
+        display: block;
+    }
+    video,
+    canvas {
+        width: 70%;
+    }
+}
+
+.butonBorder {
+    color: white;
+    background: #00404e;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    padding: 5px 10px 5px 10px;
+    border-radius: 10px;
+}

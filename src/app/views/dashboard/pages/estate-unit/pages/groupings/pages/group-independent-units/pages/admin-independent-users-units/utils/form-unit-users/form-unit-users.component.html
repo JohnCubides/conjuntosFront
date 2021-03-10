@@ -1,0 +1,82 @@
+<div class="form-associated-person">
+    <h1 class="title_component">{{ header }}</h1>
+    <form [formGroup]="associatedUser" class="data" id="form">
+        <div class="input row1c1">
+            <h3>{{ 'PERSONTYPE' | translate }}*</h3>
+            <mat-select [disableRipple]="true" [disableOptionCentering]="true" panelClass="panel" class="select " placeholder="" formControlName="personTypeId">
+                <div class="mat-option-class">
+                    <mat-option id="ptiontittle1" class="tittle">Tipo de documento</mat-option>
+                    <mat-option *ngFor="let item of selectData.personType" [value]="item.id">
+                        {{item.description}}
+                    </mat-option>
+                </div>
+            </mat-select>
+        </div>
+        <div class="input row2c1">
+            <h3>{{ 'DOCUMENTTYPE' | translate }}*</h3>
+            <mat-select [disableRipple]="true" [disableOptionCentering]="true" panelClass="panel" class="select " placeholder="" formControlName="identificationTypeId">
+                <div class="mat-option-class">
+                    <mat-option id="ptiontittle1" class="tittle">Tipo de documento</mat-option>
+                    <mat-option *ngFor="let item of selectData.identificationType" [value]="item.id">
+                        {{item.description}}
+                    </mat-option>
+                </div>
+            </mat-select>
+        </div>
+        <div class="input row3c1">
+            <label id="lbl--stateUnitName">{{'DOCUMENTNUMBER' | translate}}*</label>
+            <input id="documentNumber" type="text" name="identificationNumber" minlength="1" maxlength="30" formControlName="identificationNumber" (keypress)="validateInput('identificationNumber')" (keyup)="validateInput('identificationNumber')" (keydown)="validateInput('identificationNumber')">
+            <p class="text_error">{{ errorHandler('identificationNumber') | translate }}</p>
+        </div>
+        <div class="input row4c1">
+            <label id="lbl--stateUnitName">{{'NAMES' | translate}}*</label>
+            <input id="names" type="text" name="names" minlength="1" maxlength="50" formControlName="names" (keypress)="validateInput('names')" (keyup)="validateInput('names')" (keydown)="validateInput('names')" (focus)="validateInput('names')">
+            <p class="text_error">{{ errorHandler('names') | translate }}</p>
+        </div>
+        <div class="input row5c1">
+            <h3>Tarjeta de ingreso peatonal</h3>
+            <mat-select [disableRipple]="true" [disableOptionCentering]="true" panelClass="panel" class="select " placeholder="" formControlName="peopleIncome">
+                <div class="mat-option-class">
+                    <mat-option id="ptiontittle1" class="tittle">Tipo de documento</mat-option>
+                    <mat-option>
+                        item
+                    </mat-option>
+                </div>
+            </mat-select>
+        </div>
+        <div class="input row1c2">
+            <label id="lbl--stateUnitName">{{'SURNAMES'| translate}}*</label>
+            <input id="surnames" type="text" name="surnames" minlength="1" maxlength="50" formControlName="surnames" (keypress)="validateInput('surnames')" (keyup)="validateInput('surnames')" (keydown)="validateInput('surnames')" (focus)="validateInput('surnames')">
+            <p class="text_error">{{ errorHandler('surnames') | translate }}</p>
+        </div>
+        <div class="input row2c2">
+            <label id="lbl--stateUnitName">{{'EMAIL'|translate}}*</label>
+            <input id="email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$" type="email" name="email" minlength="1" maxlength="30" formControlName="email">
+            <p class="text_error">{{ errorHandler('email') | translate }}</p>
+        </div>
+        <div class="input row3c2">
+            <label id="lbl--stateUnitName">{{'PHONE'|translate}}*</label>
+            <input id="phone" type="text" name="phone" minlength="1" maxlength="30" formControlName="phone" (keypress)="validateInput('phone')" (keyup)="validateInput('phone')" (keydown)="validateInput('phone')" (focus)="validateInput('phone')">
+            <p class="text_error">{{ errorHandler('phone') | translate }}</p>
+        </div>
+        <div class="input row4c2">
+            <label id="lbl--stateUnitName">{{'MOBILE'|translate}}*</label>
+            <input id="mobile" type="text" name="mobile" minlength="1" maxlength="30" formControlName="mobile" (keypress)="validateInput('mobile')" (keyup)="validateInput('mobile')" (keydown)="validateInput('mobile')" (focus)="validateInput('mobile')">
+            <p class="text_error">{{ errorHandler('mobile') | translate }}</p>
+        </div>
+        <div class="input row5c2">
+            <h3>Tarjeta de ingreso vehicular</h3>
+            <mat-select [disableRipple]="true" [disableOptionCentering]="true" panelClass="panel" class="select " placeholder="" formControlName="vehiclepeopleIncome">
+                <div class="mat-option-class">
+                    <mat-option id="ptiontittle1" class="tittle">123</mat-option>
+                    <mat-option>
+                        item
+                    </mat-option>
+                </div>
+            </mat-select>
+        </div>
+        <div class="submit row6c2" *ngIf="buttonName">
+            <button type="submit" [disabled]="!associatedUser.valid || associatedUser.pristine" (click)='sendUser()'>{{ buttonName | translate }}</button>
+        </div>
+    </form>
+</div>

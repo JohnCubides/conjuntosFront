@@ -1,0 +1,95 @@
+$size-all: 7;
+$size-swich: -1;
+.onoffswitch {
+    position: relative;
+    // width: 34px + $size-swich;
+    width: 48px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.onoffswitch-checkbox {
+    display: none;
+}
+
+.onoffswitch-label {
+    display: block;
+    overflow: hidden;
+    cursor: pointer;
+    border-radius: 26px;
+}
+
+.onoffswitch-inner {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner-on,
+.onoffswitch-inner-off {
+    display: block;
+    width: 200%;
+    margin-left: -100%;
+    transition: margin 0.3s ease-in 0s;
+}
+
+.onoffswitch-inner:before,
+.onoffswitch-inner:after {
+    display: block;
+    float: left;
+    width: 50%;
+    height: 11px + $size-all;
+    padding: 0;
+    line-height: 12.5px + $size-all; //19.5px
+    font-size: 4px + $size-all;
+    color: white;
+    font-family: Trebuchet, Arial, sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+
+.onoffswitch-inner:before {
+    content: "ON";
+    padding-left: 0px + $size-all;
+    background-color: #92D5E4;
+    color: #006982;
+}
+
+.onoffswitch-inner:after {
+    content: "OFF";
+    padding-right: 3px;
+    background-color: #92A0AF;
+    color: #5e727f;
+    text-align: right;
+}
+
+.onoffswitch-switch {
+    display: block;
+    width: 18px + $size-all;
+    margin: -3px;
+    background: #dcf0f5;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 23px + $size-all;
+    border: 1px solid #4e5f6f;
+    -webkit-box-shadow: 0px 0px 4px 0px #4e5f6f;
+    -moz-box-shadow: 0px 0px 4px 0px #4e5f6f;
+    box-shadow: 0px 0px 4px 0px #4e5f6f;
+    border-radius: 26px;
+    transition: all 0.3s ease-in 0s;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-inner {
+    margin-left: 0;
+}
+
+.onoffswitch-checkbox:checked+.onoffswitch-label .onoffswitch-switch {
+    right: -4px;
+    background-color: #dcf0f5;
+    -webkit-box-shadow: 0px 0px 4px 0px #0081A0;
+    -moz-box-shadow: 0px 0px 4px 0px #0081A0;
+    box-shadow: 0px 0px 4px 0px #0081A0;
+}

@@ -1,0 +1,19 @@
+<div class="container_filter {{ traslation ? '' : 'background_filter'}}" *ngIf="filter">
+    <div class="filter_element {{ traslation ? '' : 'transaction_filter'}}">
+        <form [formGroup]="searchForm" class="colm1">
+            <button class="search icon_search"></button>
+            <input class="search_data" formControlName="search" id="ipt--search-{{ filter.id }}" type="text" placeholder="{{ filter.placeholder | translate }}" (focus)='focusViewData()' (keyup)="changesFilter($event)" autocomplete="off" >
+        </form>
+        <button class="colm2 {{ styleTest() }}" (click)="activateTraslation()"></button>
+    </div>
+    <div *ngIf="!filterAction && focusFilter" class="select_filter {{traslation ? '' : 'transaction_filter'}}">
+        <div class="data_filter" *ngFor="let data of filter.data" (click)="changesFilter(undefined, data.row)">
+            <span class="colm1 {{ data.class }}"></span>
+            <span class="colm2">{{ data.row | translate }}</span>
+        </div>
+    </div>
+    <div *ngIf="filterAction" class="filter_action transaction_filter">
+        <ng-content select="[content]"></ng-content>
+        <ng-content select="[footer]"></ng-content>
+    </div>
+</div>

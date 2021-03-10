@@ -1,0 +1,78 @@
+$background-color: #00ad9e;
+$color: #fbfbfbfb;
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    div {
+        display: flex;
+        width: 100%;
+        .rombo {
+            padding: 4px;
+            float: left;
+            .contenido {
+                border-radius: 5px;
+                padding: 0;
+                width: 24px;
+                height: 24px;
+                margin: auto;
+                text-align: center;
+                display: block;
+                -ms-transform: rotate(45deg);
+                /* IE 9 */
+                -webkit-transform: rotate(45deg);
+                /* Chrome, Safari, Opera */
+                transform: rotate(45deg);
+                transition: transform 0.1s cubic-bezier(0, 1.8, 1, 1.8);
+                &.button {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                }
+                &.active,
+                &:hover {
+                    background-color: $background-color;
+                    color: $color;
+                }
+                &.points {
+                    align-items: flex-start;
+                }
+                .texto {
+                    border-radius: 4px;
+                    color: white;
+                    position: relative;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    overflow: hidden;
+                    top: 50%;
+                    -webkit-transform: translateY(-50%) rotate(-45deg);
+                    transform: translateY(-50%) rotate(-45deg);
+                    font-size: 12pt;
+                    text-transform: uppercase;
+                }
+                mat-icon {
+                    width: 18px;
+                    height: 18px;
+                    &.next {
+                        transform: rotate(224deg);
+                    }
+                    &.back {
+                        transform: rotate(45deg);
+                    }
+                }
+            }
+            @media screen and (max-width: 576px) {
+                &.hidemobile {
+                    display: none;
+                    padding: 0px;
+                }
+                .contenido {
+                    width: 22px;
+                    height: 22px;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,17 @@
+<app-modal [modalBasic]="modalNotification">
+    <div content>
+        <div class="">
+            <div class="question" id="divMessage">
+                {{ modalNotification.message | translate }}
+            </div>
+            <div class="imgModal ctn-img">
+                <mat-icon svgIcon="{{ urlIcon() }}"></mat-icon>
+            </div>
+        </div>
+    </div>
+    <div footer class="btns-footer" #footerForm>
+        <div *ngFor="let btn of modalNotification.buttonsFooter">
+            <bits-button [element]="btn" class="bits_button"></bits-button>
+        </div>
+    </div>
+</app-modal>

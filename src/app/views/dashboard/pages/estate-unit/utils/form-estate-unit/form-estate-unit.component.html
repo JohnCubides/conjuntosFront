@@ -1,0 +1,218 @@
+<div class="form-estate-unit">
+    <h1 class="title_component">{{ header | translate }}</h1>
+    <form novalidate [formGroup]="unitComplex" class="data" id="form" #form="ngForm">
+        <div class="country_selector">
+            <h3 class=" ">{{ 'COUNTRY' | translate }}</h3>
+            <mat-select [disableRipple]="true" [disableOptionCentering]="true" panelClass="panel" class="select "
+                placeholder="" formControlName="countrySelector">
+                <div class="mat-option-class">
+                    <mat-option id="ptiontittle1" class="tittle">{{ 'COUNTRY' | translate }}</mat-option>
+                    <mat-option *ngFor="let item of selectData.countries" [value]="item.id" (click)="getState(item.id)">
+                        {{item.name}}
+                    </mat-option>
+                </div>
+            </mat-select>
+        </div>
+
+        <div class="state_selector">
+            <h3>{{ 'DEPARTMENT' | translate }}</h3>
+            <mat-select [disableRipple]="true" [disableOptionCentering]="true" panelClass="panel" class="select "
+                placeholder="" formControlName="stateSelector">
+                <div class="mat-option-class">
+                    <mat-option id="ptiontittle1" class="tittle">{{ 'DEPARTMENT' | translate }}</mat-option>
+                    <mat-option *ngFor="let item of selectData.states" [value]="item.id" (click)="getCity(item.id)">
+                        {{item.name}}
+                    </mat-option>
+                </div>
+            </mat-select>
+        </div>
+
+        <div class="city_selector">
+            <h3>{{ 'CITY' | translate }}</h3>
+            <mat-select [disableRipple]="true" [disableOptionCentering]="true" panelClass="panel" class="select "
+                placeholder="" formControlName="cityId">
+                <div class="mat-option-class">
+                    <mat-option id="ptiontittle1" class="tittle">{{ 'CITY' | translate }}</mat-option>
+                    <mat-option *ngFor="let item of selectData.cities" [value]="item.id">{{item.name}}</mat-option>
+                </div>
+            </mat-select>
+            <p class="text_error">{{ errorHandler('cityId') | translate }}</p>
+        </div>
+
+        <div class="input address">
+            <label id="address">{{ 'ADDRESS' | translate }}*</label>
+            <input id="address" type="text" name="address" minlength="1" maxlength="50" formControlName="address">
+            <p class="text_error">{{ errorHandler('address') | translate }}</p>
+        </div>
+
+        <div class="input name_complex">
+            <label id="lbl--stateUnitName">{{ 'ESTATE_UNIT_SET_REAL_ESTATE' | translate }}*</label>
+            <input id="estateUnitName" type="text" name="estateUnitName" minlength="1" maxlength="30"
+                formControlName="estateUnitName">
+            <p class="text_error">{{ errorHandler('estateUnitName') | translate }}</p>
+        </div>
+
+        <div class="nit">
+            <label id="lbl--nit">{{ 'NIT' | translate }}*</label>
+            <input id="nit" type="text" name="nit" minlength="1" maxlength="50" formControlName="nit"
+                pattern="^[a-zA-Z0-9-.]{1,50}$" (keyup)="validateInput('nit')">
+            <p class="text_error">{{ errorHandler('nit') | translate }}</p>
+        </div>
+
+        <div class="cadestre">
+            <label id="lbl--cadestreNumber">{{ 'ESTATE_UNIT_CATASTRE' | translate }}*</label>
+            <input id="cadastreNumber" type="text" name="cadastreNumber" maxlength="50" pattern="^[a-zA-Z0-9-.]{1,50}$"
+                formControlName="cadastreNumber" (keyup)="validateInput('cadastreNumber')">
+            <p class="text_error">{{ errorHandler('cadastreNumber') | translate }}</p>
+        </div>
+
+        <div class="select_id_type">
+            <h3>{{ 'DOCUMENTTYPE' | translate }}</h3>
+            <mat-select [disableRipple]="true" [disableOptionCentering]="true" panelClass="panel" class="select "
+                placeholder="" formControlName="identificationTypeId">
+                <div class="mat-option-class select_id_type ">
+                    <mat-option id="ptiontittle1" class="tittle">{{ 'DOCUMENTTYPE' | translate }}</mat-option>
+                    <mat-option *ngFor="let item of selectData.identificationType" [value]="item.id">
+                        {{item.description}}
+                    </mat-option>
+                </div>
+            </mat-select>
+        </div>
+
+        <div class="id_representative">
+            <label id="lcl--identificationNumber">{{ 'ESTATE_UNIT_DOCUMENT_REPRESENTATIVE' | translate }}*</label>
+            <input id="identificationNumber" type="text" name="identificationNumber" minlength="1" maxlength="50"
+                pattern="[a-zA-Z0-9-.]{1,50}$" formControlName="identificationNumber"
+                (keyup)="validateInput('identificationNumber')" (blur)="getUserById()">
+            <p class="text_error">{{ errorHandler('identificationNumber') | translate }}</p>
+        </div>
+
+        <div class="name_representative">
+            <label id="lbl--name">{{ 'ESTATE_UNIT_NAME_REPRESENTATIVE' | translate }}*</label>
+            <input id="name" type="text" name="name" minlength="3" maxlength="30" formControlName="name"
+                (keyup)="validateInput('name')">
+            <p class="text_error">{{ errorHandler('name') | translate }}</p>
+        </div>
+
+        <div class="surname_representative ">
+            <label id="lbl--surnameRepresentative">{{ 'ESTATE_UNIT_LASTNAME_REPRESENTATIVE' | translate }}*</label>
+            <input id="surnameRepresentative" type="text" name="lastName" minlength="3 " maxlength="30"
+                formControlName="lastName" (keyup)="validateInput('lastName')">
+            <p class="text_error">{{ errorHandler('lastName') | translate }}</p>
+        </div>
+
+        <div class="email_representative ">
+            <label id="lbl--email">{{ 'ESTATE_UNIT_EMAIL_REPRESENTATIVE' | translate }}*</label>
+            <input id="email" type="email" name="email" pattern="[a-zA-Z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,3}$"
+                formControlName="email">
+            <p class="text_error">{{ errorHandler('email') | translate }}</p>
+        </div>
+
+        <div class="phone_estate_unit">
+            <h3>{{ 'COUNTRY' | translate }}</h3>
+            <mat-select [disableRipple]="true " [disableOptionCentering]="false " panelClass="panel " class="select "
+                placeholder="" formControlName="phoneCountry">
+                <div class="mat-option-class">
+                    <mat-option id="ptiontittle1" class="tittle">{{ 'COUNTRY' | translate }}</mat-option>
+                    <mat-option *ngFor="let item of selectData.countries" [value]="item.phoneCode"
+                        (blur)="unitComplex.get('phoneCountry').value">{{item.name}}
+                    </mat-option>
+                </div>
+            </mat-select>
+        </div>
+
+        <div class="number_country ">
+            <div class="number_country_1 ">
+                <input id="phoneCountrytext" type="text" name="phone " minlength="3 " maxlength="30 "
+                    value="+{{unitComplex.get('phoneCountry').value}}" disabled>
+            </div>
+
+            <div class="number_country_2 ">
+                <label id="lbl--phone ">{{ 'ESTATE_UNIT_PHONE_NUMBER' | translate }}*</label>
+                <input id="phone" type="text" name="phone" minlength="6" maxlength="15" formControlName="phone"
+                    pattern="[0-9]+" (keyup)="validateInput('phone')">
+                <p class="text_error">{{ errorHandler('phone') | translate }}</p>
+            </div>
+        </div>
+
+        <div class="mobile_country">
+            <h3>{{ 'COUNTRY' | translate }}</h3>
+            <mat-select [disableRipple]="true " [disableOptionCentering]="true " panelClass="panel " class="select "
+                placeholder="" formControlName="mobileCountry">
+                <div class="mat-option-class ">
+                    <mat-option id="ptiontittle1" class="tittle">{{ 'COUNTRY' | translate }}</mat-option>
+                    <mat-option *ngFor="let item of selectData.countries" [value]="item.phoneCode"
+                        (blur)="unitComplex.get('mobileCountry').value">{{item.name}}
+                    </mat-option>
+                </div>
+            </mat-select>
+        </div>
+
+        <div class="mobile_representative ">
+            <div class="mobile_representative_1 ">
+                <input id="codeMobile" type="text " name="phone " minlength="7" maxlength="15"
+                    value="+{{unitComplex.get('mobileCountry').value}}" disabled>
+            </div>
+
+            <div class="number_country_2 ">
+                <label id="lbl--mobile ">{{ 'ESTATE_UNIT_PHONE_NUMBER_REPRESENTATIVE' | translate }}*</label>
+                <input id="mobile" type="text " name="mobile" minlength="6" maxlength="15" formControlName="mobile"
+                    pattern="^[0-9]+" (keyup)="validateInput('mobile')">
+                <p class="text_error">{{ errorHandler('mobile') | translate }}</p>
+            </div>
+        </div>
+
+        <div class="group">
+            <label id="lbl--numberGroups">{{ 'ESTATE_UNIT_GROUPINGS' | translate }}*</label>
+            <input id="numberGroup" type="text" name="numberGroup" minlength="1" maxlength="5"
+                formControlName="numberGroup" pattern="[0-9]+" placeholder="Cantidad"
+                (keyup)="validateInput('numberGroup')">
+            <p class="text_error">{{ errorHandler('numberGroup') | translate }}</p>
+        </div>
+
+        <div class="estate_units ">
+            <label id="lbl--numberIndependentUnits ">{{ 'ESTATE_UNIT_INDEPENDENT_UNITS' | translate }}*</label>
+            <input id="numberIndependentUnit" type="text " name="numberIndependentUnit" minlength="1" maxlength="5"
+                pattern="[0-9]+" formControlName="numberIndependentUnit" placeholder="Cantidad"
+                (keyup)="validateInput('numberIndependentUnit')">
+            <p class="text_error">{{ errorHandler('numberIndependentUnit') | translate }}</p>
+        </div>
+
+        <div class="pedrastian_entrance ">
+            <label id="lbl--numberPedrastianEntrance">{{ 'ESTATE_UNIT_PEDESTRIAN_ACCESS' | translate }}*</label>
+            <input id="numberPedestrianEntrance " type="text " name="numberPedestrianEntrance" minlength="1"
+                maxlength="5" pattern="[0-9]+" formControlName="numberPedestrianEntrance" placeholder="Cantidad"
+                (keyup)="validateInput('numberPedestrianEntrance')">
+            <p class="text_error">{{ errorHandler('numberPedestrianEntrance') | translate }}</p>
+        </div>
+
+        <div class="vehicle_entrance">
+            <label id="lbl--numberVehicularEntrance">{{ 'ESTATE_UNIT_VEHICLE_ACCESSES' | translate }}*</label>
+            <input id="numberVehicularEntrance" type="text" name="numberVehicularEntrance" minlength="1" maxlength="5"
+                pattern="[0-9]+" formControlName="numberVehicularEntrance" placeholder="Cantidad"
+                (keyup)="validateInput('numberVehicularEntrance')">
+            <p class="text_error">{{ errorHandler('numberVehicularEntrance') | translate }}</p>
+        </div>
+
+        <div class="parkings">
+            <label id="lbl--numberParkingLots ">{{ 'ESTATE_UNIT_PARKING_LOT' | translate }}*</label>
+            <input id="numberParkingLots" type="text" name="numberParkingLots " minlength="1" maxlength="5"
+                pattern="[0-9]+" formControlName="numberParkingLots" placeholder="Cantidad"
+                (keyup)="validateInput('numberParkingLots')">
+            <p class="text_error">{{ errorHandler('numberParkingLots') | translate }}</p>
+        </div>
+
+        <div class="switch ">
+            <label id="lbl--swich-active">{{ 'ACTIVATE' | translate }}</label>
+            <app-toggle-swich [idNodeFather]=" 'state_create_estate_unit' "
+                [stateNode]="unitComplex.get('status').value" (resultToggleSwich)='changesStateToggleSwich($event)'>
+            </app-toggle-swich>
+        </div>
+
+        <div class="submit" *ngIf="buttonName">
+            <button type="submit" (click)="saveStateUnit()"
+                [disabled]="  !unitComplex.valid || unitComplex.pristine  && !buttonChange">{{ buttonName | translate }}</button>
+        </div>
+    </form>
+
+</div>

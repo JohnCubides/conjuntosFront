@@ -1,0 +1,22 @@
+<div class="cam">
+    <button id="btn--action-user" mat-button [matMenuTriggerFor]="menu">
+        <div class="radius">
+            <div *ngIf="imgDefaultView">
+                <img id="img--image-user" class="imgUser" src="{{imageDefault}}" alt="">
+            </div>
+            <div *ngIf="imageResultView">
+                <img id="img--image1-user" class="imgUser" src="{{imageResult}}" alt="">
+            </div>
+        </div>
+    </button>
+    <div class="customize  ">
+        <mat-menu id="menu" #menu="matMenu" class="customize {{ disabledUserForm ? '' : 'disabledUserForm' }}">
+            <button id="btn--action1-user" mat-menu-item (click)="openDialog('TakePhoto')">Tomar foto</button>
+            <button id="btn--action2-user" mat-menu-item (click)="openDialog('UploadPhoto')">Subir foto</button>
+            <div *ngIf="menuDialog">
+                <button id="btn--action3-user" mat-menu-item (click)="openDialog('ViewPhoto')">Ver Foto</button>
+                <button id="btn--action4-user" mat-menu-item (click)='deletePhoto()'>Borrar Foto</button>
+            </div>
+        </mat-menu>
+    </div>
+</div>

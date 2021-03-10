@@ -1,0 +1,170 @@
+@import "instance";
+
+.form-estate-unit {
+    margin-top: 64px;
+    .data {
+        display: grid;
+        grid-gap: 25px 10px;
+        // grid-template: {
+        //     // columns: 200px 200px 200px 200px 200px;
+        //     // columns: auto 5fr;
+        //     columns: minmax(200px, 5fr);;
+        // }
+        height: 60px;
+        .select {
+            border-radius: 5px 5px 0px 0px;
+            height: 44px;
+            margin-top: 21px;
+            background: $c28;
+            color: white;
+            padding-left: 8px;
+            padding-right: 8px;
+        }
+        input {
+            border-radius: 5px 5px 0px 0px;
+            width: 100%;
+            background: $c28;
+            color: white;
+            padding-left: 8px;
+            padding-right: 8px;
+            height: 44px;
+            &.ng-invalid.ng-touched {
+                border-style: solid;
+                border-width: 2px;
+                border-color: #ff746e;
+            }
+        }
+        label {
+            @include font(szrem(12), $f1, normal);
+            @include wh(100%);
+            @include flex;
+            margin-left: 5px;
+            color: $c15;
+        }
+
+        .tittle {
+            @include font(szrem(40), $f2, normal);
+            grid-column: 1 / 6;
+            grid-row: 1;
+            text-align: end;
+            height: 50px;
+            color: $c1;
+        }
+
+        .country_selector {
+            grid-column: 1 / 1;
+            grid-row: 2;
+        }
+        .state_selector {
+            grid-column: 2 / 2;
+            grid-row: 2;
+        }
+        .city_selector {
+            grid-column: 3 / 3;
+            grid-row: 2;
+        }
+        .address {
+            grid-column: 4 / 6;
+            grid-row: 2;
+        }
+        .name_complex {
+            grid-column: 1 / 3;
+            grid-row: 3;
+        }
+        .nit {
+            grid-column: 3 / 3;
+            grid-row: 3;
+        }
+        .cadestre {
+            grid-column: 4 / 5;
+            grid-row: 3;
+        }
+        .select_id_type {
+            grid-column: 5 / 6;
+            grid-row: 3;
+        }
+        .id_representative {
+            grid-column: 1 / 1;
+            grid-row: 4;
+        }
+        .name_representative {
+            grid-column: 2 / 2;
+            grid-row: 4;
+        }
+        .surname_reprensentative {
+            grid-column: 3 / 3;
+            grid-row: 4;
+        }
+        .email_representative {
+            grid-column: 4/6;
+            grid-row: 4;
+        }
+        .phone_estate_unit {
+            grid-column: 1/1;
+            grid-row: 5;
+        }
+        .number_country {
+            grid-column: 2/3;
+            grid-row: 5;
+            display: grid;
+            grid-gap: 0px 5px;
+            grid-template: {
+                columns: 44px 152px;
+                columns: 44px auto;
+            }
+            .number_country_1 {
+                display: flex;
+                align-items: flex-end;
+            }
+        }
+        .mobile_representative {
+            grid-column: 4/5;
+            grid-row: 5;
+            display: grid;
+            grid-gap: 0px 5px;
+            grid-template: {
+                // columns: 44px 152px;
+                columns: 44px auto;
+            }
+            .mobile_representative_1 {
+                display: flex;
+                align-items: flex-end;
+            }
+        }
+        .group {
+            grid-column: 1/2;
+            grid-row: 6;
+        }
+        .estate_units {
+            grid-column: 2/3;
+            grid-row: 6;
+        }
+        .pedrastian_entrance {
+            grid-column: 3/4;
+            grid-row: 6;
+        }
+        .vehicle_entrance {
+            grid-column: 4/5;
+            grid-row: 6;
+        }
+        .parkings {
+            grid-column: 5/6;
+            grid-row: 6;
+        }
+        .switch {
+            grid-column: 1/1;
+            grid-row: 7;
+            label {
+                margin-bottom: 10px;
+            }
+        }
+        .submit {
+            grid-column: 5/6;
+            grid-row: 7;
+            button {
+                @include button_1((colorhover: $c12, colordisabled: $c30, textcolordisabled: $c31));
+                // @extend %button_1;
+            }
+        }
+    }
+}

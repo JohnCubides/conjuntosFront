@@ -1,0 +1,189 @@
+@import "instance";
+.container_main {
+    font-size: szrem(16);
+    min-height: 100vh;
+    display: grid;
+    color: $c1;
+    grid-template: {
+        rows: 80px minmax(calc(100vh - 144px), auto) 64px;
+        columns: 1fr;
+    }
+    .main_header {
+        @include position;
+        @include justify-content(space-between);
+        @include align-items(center);
+        @include flex;
+        box-shadow: 0 2px 5px $c32;
+        padding: 0 28px;
+        grid-row-start: 1;
+        z-index: 2;
+        @include brp($b5) {
+            padding-right: 0;
+        }
+        .container_logo {
+            @include center-flex-row;
+            .text_logo {
+                font-size: szrem(12);
+            }
+            .icon_logo {
+                @include border-radius(50%);
+                @include whs(60px);
+                margin-right: 28px;
+            }
+        }
+        .container_user_menu {
+            @include center-flex-row;
+        }
+    }
+    .main {
+        grid-row: 2;
+        display: flex;
+        @include brp($b5) {
+            display: block;
+        }
+        & .mat-drawer-container {
+            @include wh(100%);
+            overflow-y: hidden;
+            & .mat-drawer {
+                background-color: $c7;
+                height: 0;
+                &.mat-drawer-opened {
+                    height: auto;
+                }
+                .close-menu {
+                    color: $c1;
+                    display: flex;
+                    justify-content: flex-end;
+                    padding: 15px;
+                    cursor: pointer;
+                }
+                .mat-expansion-panel {
+                    background-color: $c7;
+                    color: $c1;
+                    & .mat-expansion-panel-header-title {
+                        color: $c1;
+                    }
+                    &:not(.mat-expanded):not([aria-disabled=true]) .mat-expansion-panel-header:hover {
+                        background: $c7;
+                    }
+                }
+            }
+            .container-content {
+                @include position;
+                @include wh(93%);
+                max-width: 1500px;
+                margin: 40px auto;
+                overflow-y: hidden;
+                height: 90vh;
+            }
+        }
+    }
+    .main_footer {
+        @include box-shadow(0 -2px 5px $c32);
+        @include position;
+        @include wh(100%);
+        @include center-flex-row;
+        z-index: 1;
+        .copyright {
+            @include text(left, uppercase);
+            font-size: szrem(10);
+            padding-right: 1em;
+            @include brp($b5) {
+                font-size: szrem(8);
+            }
+        }
+    }
+}
+
+a {
+    color: $c1;
+    line-height: 2;
+}
+
+.t-center {
+    text-align: center;
+}
+
+.user {
+    @include border-radius(50%);
+    @include whs(36px);
+    margin: 10px;
+}
+
+.font-12 {
+    font-size: 12px;
+}
+
+.font-10 {
+    font-size: 10px;
+}
+
+.breadcrumb {
+    @include position;
+    display: inline-block;
+    z-index: 2;
+}
+
+.btn-menu {
+    background-color: $c0;
+    color: $c1;
+    height: min-content;
+    padding: 10px 30px 0px 15px;
+    cursor: pointer;
+}
+
+.icon-open-menu {
+    font-size: 2em;
+    pointer-events: none;
+}
+
+.mat-expansion-panel-body {
+    padding: 0;
+}
+
+.list-menu {
+    padding: 0px 20px;
+    &:hover {
+        background-color: $c6;
+    }
+}
+
+.icon-accordion {
+    padding-right: 10px;
+}
+
+.logo-bits-footer {
+    width: 80px;
+    height: 40px;
+}
+
+.t-align-end {
+    text-align: end;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+.f-size-icon {
+    font-size: 20px;
+}
+
+.close {
+    box-shadow: 0px 0.2px 0px $c1;
+    color: $c1;
+    padding: 4px 9px 4px 0px;
+}
+
+.exit {
+    box-shadow: 1px 1px 3px $c1;
+}
+
+@media only screen and (min-width: 320px) and (max-width: 960px) {
+    .text-logo {
+        margin: 0.5em;
+    }
+    .text-user {
+        display: none;
+    }
+}

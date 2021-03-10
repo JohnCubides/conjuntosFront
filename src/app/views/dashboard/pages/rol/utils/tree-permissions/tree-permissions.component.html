@@ -1,0 +1,17 @@
+<ul class="{{ (validateIsChildren && !nextNodeSecond) ? 'ul-children' : '' }}">
+    <li *ngFor="let data of listNode; let i = index" class="{{ validateIsChildren ? 'children' : 'isMain' }}">
+        <div class="line-tree {{ nodes(i, 'nodes-init-line') }} {{ nextNodeSecond ? 'line-second' : '' }} {{ secondNodes() }} {{ i > 0 ? 'block_second' : '' }}"></div>
+        <div class="line {{ nodes(i, 'nodes-init') }} {{ nextNodeSecond ? 'line-second' : '' }} {{ i > 0 ? 'block_second' : '' }}">
+            <div class="point {{data.state ? 'activated' : ''}} {{ !validateIsChildren ? 'main-point' : '' }} {{ (validateIsChildren && !nextNodeSecond) ? 'point-children' : '' }}"></div>
+            <div class="text {{ (validateIsChildren && !nextNodeSecond) ? 'text-children' : '' }}">
+                <p id="p--name-tree-permissions-{{ data.id }}">{{ data.name | translate }}</p>
+            </div>
+            <div>
+                <app-toggle-swich [idNodeFather]="addIdElementNode(i)" [stateNode]="data.state" (resultToggleSwich)='changesStateToggleSwich($event, data)' [disabled]='disabled' class="toggle_swich"></app-toggle-swich>
+            </div>
+        </div>
+        <div class="childrens" *ngIf="data.sonsPermits && data.sonsPermits.length > 0">
+            <app-tree-permissions [listNode]="data.sonsPermits" [validateIsChildren]=true [idNodeFather]="addIdElementNode(i)" [nodesListMain]="nodesListMain" [nextNodeSecond]='!validateIsChildren' [disabled]='disabled' class="tree_permissions"></app-tree-permissions>
+        </div>
+    </li>
+</ul>

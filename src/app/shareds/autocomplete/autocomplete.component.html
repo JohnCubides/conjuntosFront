@@ -1,0 +1,26 @@
+<div class="item_form_autocomplete" *ngIf="autocomplete">
+    <label for="ipt--data-{{dataId}}" id="lbl--data-{{dataId}}" class="label_data"> {{ autocomplete.text | translate }} </label>
+    <form class="input_form" [formGroup]="inputForm">
+        <div *ngFor="let data of datas; let i = index" class="span_select">
+            <div class="label_data">
+                <div class="active_data headboard">{{ data.shortword | translate }}</div>
+                <p class="active_data body_data">{{ data.description | translate }}</p>
+                <button class="active_data close_data icon_close_1" (click)="deleteSearch(i)">x</button>
+            </div>
+        </div>
+        <div class="autocomplete">
+            <div>
+                <input type="text" id="ipt--data-{{dataId}}" formControlName="data" placeholder="" (keyup)='sendDataComplete()' autocomplete="off" />
+            </div>
+            <div class="autocomplete_select {{ autocomplet ? 'active' : '' }}" *ngIf="focusData">
+                <div class="selection">
+                    <div class="options" *ngFor="let auto of autocomplet" (click)="addData(auto)">
+                        <span class="text init_shortword {{ auto.class}}">
+                            {{ auto.shortword | translate }}
+                        </span> {{ auto.description | translate }}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,6 @@
+<div class="action_status">
+    <div class="radiobtn" *ngFor="let radio of radioBtns">
+        <input type="radio" id="{{ radio.id }}" name="{{ radio.group }}" value="{{ radio.value }}" (change)="onItemChange(+$event.target.value)" [checked]="radio.checked === true" />
+        <label for="{{ radio.id }}" class="{{ deleteBorder(radio.value) }} {{ borderRadio }}">{{ radio.text | translate }}</label>
+    </div>
+</div>

@@ -1,0 +1,178 @@
+<?xml version="1.0"?>
+<testsuite name="Chrome 84.0.4147.89 (Windows 10)" package="" timestamp="2020-07-17T17:33:13" id="0" hostname="ATTENA" tests="127" errors="0" failures="0" time="1.452">
+  <properties>
+    <property name="browser.fullName" value="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.89 Safari/537.36"/>
+  </properties>
+  <testcase name="AppComponent should create the appyes" time="0.119" classname="Chrome_84_0_4147_89_(Windows_10).AppComponent"/>
+  <testcase name="AppComponent should have as title 'ba-conjuntos-residenciales'yes" time="0.009" classname="Chrome_84_0_4147_89_(Windows_10).AppComponent"/>
+  <testcase name="AuthGuard should be createdyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).AuthGuard">
+    <skipped/>
+  </testcase>
+  <testcase name="InterceptorsService should be createdyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).InterceptorsService">
+    <skipped/>
+  </testcase>
+  <testcase name="AbstractModal should create it component extends abstractModalyes" time="0.012" classname="Chrome_84_0_4147_89_(Windows_10).AbstractModal"/>
+  <testcase name="AbstractModal should show activate show modal footeryes" time="0.004" classname="Chrome_84_0_4147_89_(Windows_10).AbstractModal"/>
+  <testcase name="AbstractTable should create it component extends AbstractTableyes" time="0.006" classname="Chrome_84_0_4147_89_(Windows_10).AbstractTable"/>
+  <testcase name="AbstractTable should show activate show modal footeryes" time="0.003" classname="Chrome_84_0_4147_89_(Windows_10).AbstractTable"/>
+  <testcase name="AbstractTable should show date send endpointyes" time="0.003" classname="Chrome_84_0_4147_89_(Windows_10).AbstractTable"/>
+  <testcase name="Autocomplete should create an instanceyes" time="0.001" classname="Chrome_84_0_4147_89_(Windows_10).Autocomplete"/>
+  <testcase name="EventsForms should create an instanceyes" time="0.001" classname="Chrome_84_0_4147_89_(Windows_10).EventsForms"/>
+  <testcase name="Events should create an instanceyes" time="0.001" classname="Chrome_84_0_4147_89_(Windows_10).Events"/>
+  <testcase name="Group should create an instanceyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).Group"/>
+  <testcase name="Group should create an instanceyes" time="0.001" classname="Chrome_84_0_4147_89_(Windows_10).Group"/>
+  <testcase name="ModalBasic should create an instanceyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).ModalBasic"/>
+  <testcase name="Test for class ModalNotification should create an instanceyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).Test for class ModalNotification"/>
+  <testcase name="Paginator should create an instanceyes" time="0.001" classname="Chrome_84_0_4147_89_(Windows_10).Paginator"/>
+  <testcase name="RolAndPermissions should create an instanceyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).RolAndPermissions"/>
+  <testcase name="SettingTable should create an instanceyes" time="0.001" classname="Chrome_84_0_4147_89_(Windows_10).SettingTable"/>
+  <testcase name="Menu-Item should create an instanceyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).Menu-Item"/>
+  <testcase name="Table should create an instanceyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).Table"/>
+  <testcase name="TreePermissions should create an instanceyes" time="0.001" classname="Chrome_84_0_4147_89_(Windows_10).TreePermissions"/>
+  <testcase name="TreePermissions should create an instanceyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).TreePermissions"/>
+  <testcase name="User should create an instanceyes" time="0.001" classname="Chrome_84_0_4147_89_(Windows_10).User"/>
+  <testcase name="AutocompleteService should be createdyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).AutocompleteService">
+    <skipped/>
+  </testcase>
+  <testcase name="BitstableService should be createdyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).BitstableService">
+    <skipped/>
+  </testcase>
+  <testcase name="BaseFilterService should be createdyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).BaseFilterService">
+    <skipped/>
+  </testcase>
+  <testcase name="JwtService should be createdyes" time="0.003" classname="Chrome_84_0_4147_89_(Windows_10).JwtService"/>
+  <testcase name="LocalStorageService should be createdyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).LocalStorageService">
+    <skipped/>
+  </testcase>
+  <testcase name="ModalService should be createdyes" time="0.002" classname="Chrome_84_0_4147_89_(Windows_10).ModalService"/>
+  <testcase name="PaginatorService should be createdyes" time="0.002" classname="Chrome_84_0_4147_89_(Windows_10).PaginatorService"/>
+  <testcase name="PrincipalLayoutComponent should createyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).PrincipalLayoutComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="AutocompleteComponent should createyes" time="0.007" classname="Chrome_84_0_4147_89_(Windows_10).AutocompleteComponent"/>
+  <testcase name="AutocompleteComponent should validate that you add the data to the listyes" time="0.006" classname="Chrome_84_0_4147_89_(Windows_10).AutocompleteComponent"/>
+  <testcase name="AutocompleteComponent Should validate focus statusyes" time="0.005" classname="Chrome_84_0_4147_89_(Windows_10).AutocompleteComponent"/>
+  <testcase name="BitspaginatorComponent should createyes" time="0.016" classname="Chrome_84_0_4147_89_(Windows_10).BitspaginatorComponent"/>
+  <testcase name="BitspaginatorComponent Debería cargar correctamente la lista de botonesyes" time="0.008" classname="Chrome_84_0_4147_89_(Windows_10).BitspaginatorComponent"/>
+  <testcase name="BitspaginatorComponent Debería cargar correctamente la lista desde la opcion 5yes" time="0.011" classname="Chrome_84_0_4147_89_(Windows_10).BitspaginatorComponent"/>
+  <testcase name="BitspaginatorComponent Debería cargar correctamente la lista desde la opcion 3yes" time="0.009" classname="Chrome_84_0_4147_89_(Windows_10).BitspaginatorComponent"/>
+  <testcase name="BitspaginatorComponent Debería cargar correctamente la lista desde la opcion 3yes" time="0.009" classname="Chrome_84_0_4147_89_(Windows_10).BitspaginatorComponent"/>
+  <testcase name="Test for BitstableComponent should create the component with buttonsyes" time="0.015" classname="Chrome_84_0_4147_89_(Windows_10).Test for BitstableComponent"/>
+  <testcase name="Test for BitstableComponent should init paginatoryes" time="0.012" classname="Chrome_84_0_4147_89_(Windows_10).Test for BitstableComponent"/>
+  <testcase name="Test for BitstableComponent should not init paginatoryes" time="0.009" classname="Chrome_84_0_4147_89_(Windows_10).Test for BitstableComponent"/>
+  <testcase name="Test for ModalNotificationComponent should create component characteristicsyes" time="0.02" classname="Chrome_84_0_4147_89_(Windows_10).Test for ModalNotificationComponent"/>
+  <testcase name="Test for ModalNotificationComponent should behave...yes" time="0.012" classname="Chrome_84_0_4147_89_(Windows_10).Test for ModalNotificationComponent"/>
+  <testcase name="Test for ModalComponent should create component for modalyes" time="0.015" classname="Chrome_84_0_4147_89_(Windows_10).Test for ModalComponent"/>
+  <testcase name="Test for ModalComponent should create component for modal without imageyes" time="0.022" classname="Chrome_84_0_4147_89_(Windows_10).Test for ModalComponent"/>
+  <testcase name="Test for ModalComponent should validate window size is greater than 576yes" time="0.015" classname="Chrome_84_0_4147_89_(Windows_10).Test for ModalComponent"/>
+  <testcase name="Test for ModalComponent should validate window size is less than 577yes" time="0.013" classname="Chrome_84_0_4147_89_(Windows_10).Test for ModalComponent"/>
+  <testcase name="StatefilterComponent should createyes" time="0.009" classname="Chrome_84_0_4147_89_(Windows_10).StatefilterComponent"/>
+  <testcase name="ToggleSwichComponent should createyes" time="0.004" classname="Chrome_84_0_4147_89_(Windows_10).ToggleSwichComponent"/>
+  <testcase name="ToggleSwichComponent validate variables initial stateNode falseyes" time="0.008" classname="Chrome_84_0_4147_89_(Windows_10).ToggleSwichComponent validate variables initial"/>
+  <testcase name="ToggleSwichComponent validate variables initial stateNode trueyes" time="0.005" classname="Chrome_84_0_4147_89_(Windows_10).ToggleSwichComponent validate variables initial"/>
+  <testcase name="ToggleSwichComponent validate variables initial idNodeFatheryes" time="0.005" classname="Chrome_84_0_4147_89_(Windows_10).ToggleSwichComponent validate variables initial"/>
+  <testcase name="ToggleSwichComponent Validate changes Toggle Swich in ONyes" time="0.013" classname="Chrome_84_0_4147_89_(Windows_10).ToggleSwichComponent Validate changes"/>
+  <testcase name="ToggleSwichComponent Validate changes Toggle Swich in OFFyes" time="0.01" classname="Chrome_84_0_4147_89_(Windows_10).ToggleSwichComponent Validate changes"/>
+  <testcase name="BitsbuttonComponent should createyes" time="0.005" classname="Chrome_84_0_4147_89_(Windows_10).BitsbuttonComponent"/>
+  <testcase name="Test for SearchNumberComponent is search for table should create component for search numberyes" time="0.008" classname="Chrome_84_0_4147_89_(Windows_10).Test for SearchNumberComponent is search for table"/>
+  <testcase name="Test for SearchNumberComponent is search for table should put the number to 0yes" time="0.011" classname="Chrome_84_0_4147_89_(Windows_10).Test for SearchNumberComponent is search for table"/>
+  <testcase name="Test for SearchNumberComponent is search for table should put the number to 5yes" time="0.008" classname="Chrome_84_0_4147_89_(Windows_10).Test for SearchNumberComponent is search for table"/>
+  <testcase name="LoginComponent LoginUser should login useryes" time="0.036" classname="Chrome_84_0_4147_89_(Windows_10).LoginComponent LoginUser"/>
+  <testcase name="RestorePasswordComponent Charge Page should createyes" time="0.037" classname="Chrome_84_0_4147_89_(Windows_10).RestorePasswordComponent Charge Page"/>
+  <testcase name="RestorePasswordComponent reset Password should reset passwordyes" time="0.013" classname="Chrome_84_0_4147_89_(Windows_10).RestorePasswordComponent reset Password"/>
+  <testcase name="CreateEstateUnitComponent should createyes" time="0.01" classname="Chrome_84_0_4147_89_(Windows_10).CreateEstateUnitComponent"/>
+  <testcase name="CreateEstateUnitComponent should createyes" time="0.01" classname="Chrome_84_0_4147_89_(Windows_10).CreateEstateUnitComponent"/>
+  <testcase name="CreateComponent should createyes" time="0.008" classname="Chrome_84_0_4147_89_(Windows_10).CreateComponent"/>
+  <testcase name="ModifyComponent should createyes" time="0.007" classname="Chrome_84_0_4147_89_(Windows_10).ModifyComponent"/>
+  <testcase name="FormIndependentUnitComponent should createyes" time="0.018" classname="Chrome_84_0_4147_89_(Windows_10).FormIndependentUnitComponent"/>
+  <testcase name="ManagerGroupingsCreateComponent should createyes" time="0.009" classname="Chrome_84_0_4147_89_(Windows_10).ManagerGroupingsCreateComponent"/>
+  <testcase name="ManagerGroupingsModifyComponent should createyes" time="0.008" classname="Chrome_84_0_4147_89_(Windows_10).ManagerGroupingsModifyComponent"/>
+  <testcase name="ManagerEstateUnitsComponent should createyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).ManagerEstateUnitsComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="UpdateEstateUnitsComponent should createyes" time="0.009" classname="Chrome_84_0_4147_89_(Windows_10).UpdateEstateUnitsComponent"/>
+  <testcase name="FormEstateUnitComponent should createyes" time="0.073" classname="Chrome_84_0_4147_89_(Windows_10).FormEstateUnitComponent"/>
+  <testcase name="HomeComponent should createyes" time="0.008" classname="Chrome_84_0_4147_89_(Windows_10).HomeComponent"/>
+  <testcase name="ConsultUserComponent should createyes" time="0.013" classname="Chrome_84_0_4147_89_(Windows_10).ConsultUserComponent"/>
+  <testcase name="Test for create user should createyes" time="0.04" classname="Chrome_84_0_4147_89_(Windows_10).Test for create user"/>
+  <testcase name="Test for create user Should show that the user is already savedyes" time="0.02" classname="Chrome_84_0_4147_89_(Windows_10).Test for create user"/>
+  <testcase name="Test for create user call modalyes" time="0.02" classname="Chrome_84_0_4147_89_(Windows_10).Test for create user"/>
+  <testcase name="ModifyUserComponent should createyes" time="0.01" classname="Chrome_84_0_4147_89_(Windows_10).ModifyUserComponent"/>
+  <testcase name="CamComponent should createyes" time="0.007" classname="Chrome_84_0_4147_89_(Windows_10).CamComponent"/>
+  <testcase name="CanvasPhotoComponent should create component for canvas photoyes" time="0.01" classname="Chrome_84_0_4147_89_(Windows_10).CanvasPhotoComponent"/>
+  <testcase name="CanvasPhotoComponent should turn leftyes" time="0.045" classname="Chrome_84_0_4147_89_(Windows_10).CanvasPhotoComponent"/>
+  <testcase name="CanvasPhotoComponent should turn rightyes" time="0.022" classname="Chrome_84_0_4147_89_(Windows_10).CanvasPhotoComponent"/>
+  <testcase name="CanvasPhotoComponent should save the image of a changeyes" time="0.009" classname="Chrome_84_0_4147_89_(Windows_10).CanvasPhotoComponent"/>
+  <testcase name="CanvasPhotoComponent should save the image without any changesyes" time="0.008" classname="Chrome_84_0_4147_89_(Windows_10).CanvasPhotoComponent"/>
+  <testcase name="CircleComponent should create initial component Circleyes" time="0.005" classname="Chrome_84_0_4147_89_(Windows_10).CircleComponent"/>
+  <testcase name="CircleComponent should view the text 0 de 2yes" time="0.003" classname="Chrome_84_0_4147_89_(Windows_10).CircleComponent"/>
+  <testcase name="CircleComponent should view the text 1 de 2yes" time="0.005" classname="Chrome_84_0_4147_89_(Windows_10).CircleComponent"/>
+  <testcase name="CircleComponent should view the text 2 de 2yes" time="0.005" classname="Chrome_84_0_4147_89_(Windows_10).CircleComponent"/>
+  <testcase name="DialogComponent should createyes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).DialogComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="FormUserComponent should createyes" time="0.024" classname="Chrome_84_0_4147_89_(Windows_10).FormUserComponent"/>
+  <testcase name="FormUserComponent should create valid responsiveyes" time="0.025" classname="Chrome_84_0_4147_89_(Windows_10).FormUserComponent"/>
+  <testcase name="FormUserComponent should create valid responsiveyes" time="0.024" classname="Chrome_84_0_4147_89_(Windows_10).FormUserComponent"/>
+  <testcase name="FormUserComponent should show concatenated usernameyes" time="0.028" classname="Chrome_84_0_4147_89_(Windows_10).FormUserComponent"/>
+  <testcase name="FormUserComponent should show concatenated username without two name and without two surnamesyes" time="0.021" classname="Chrome_84_0_4147_89_(Windows_10).FormUserComponent"/>
+  <testcase name="FormUserComponent should valid percentage with half the required fields at 50%yes" time="0" classname="Chrome_84_0_4147_89_(Windows_10).FormUserComponent">
+    <skipped/>
+  </testcase>
+  <testcase name="FormUserComponent should valid percentage with half the required fields at 100%yes" time="0.025" classname="Chrome_84_0_4147_89_(Windows_10).FormUserComponent"/>
+  <testcase name="FormUserComponent should reset formyes" time="0.024" classname="Chrome_84_0_4147_89_(Windows_10).FormUserComponent"/>
+  <testcase name="Test for Upload and Take Photo for the user should create component for Upload and Take Photo for the useryes" time="0.013" classname="Chrome_84_0_4147_89_(Windows_10).Test for Upload and Take Photo for the user"/>
+  <testcase name="Test for Upload and Take Photo for the user should return variables to their original stateyes" time="0.009" classname="Chrome_84_0_4147_89_(Windows_10).Test for Upload and Take Photo for the user"/>
+  <testcase name="Test for Upload and Take Photo for the user should behave...yes" time="0.018" classname="Chrome_84_0_4147_89_(Windows_10).Test for Upload and Take Photo for the user"/>
+  <testcase name="ConsultComponent should createyes" time="0.011" classname="Chrome_84_0_4147_89_(Windows_10).ConsultComponent"/>
+  <testcase name="ConsultComponent get informationyes" time="0.006" classname="Chrome_84_0_4147_89_(Windows_10).ConsultComponent"/>
+  <testcase name="Test for create rol and permits Should create component Create Rolyes" time="0.015" classname="Chrome_84_0_4147_89_(Windows_10).Test for create rol and permits"/>
+  <testcase name="Test for create rol and permits Should Validate service Get Datayes" time="0.007" classname="Chrome_84_0_4147_89_(Windows_10).Test for create rol and permits Should Validate service"/>
+  <testcase name="Test for create rol and permits Should Validate service Post for message unsuccessfully for erroryes" time="0.007" classname="Chrome_84_0_4147_89_(Windows_10).Test for create rol and permits Should Validate service Post"/>
+  <testcase name="Test for create rol and permits Should Validate service Post for message unsuccessfullyyes" time="0.009" classname="Chrome_84_0_4147_89_(Windows_10).Test for create rol and permits Should Validate service Post"/>
+  <testcase name="Test for create rol and permits Should Validate service Post for message successyes" time="0.007" classname="Chrome_84_0_4147_89_(Windows_10).Test for create rol and permits Should Validate service Post"/>
+  <testcase name="Test for FormRolComponent should createyes" time="0.016" classname="Chrome_84_0_4147_89_(Windows_10).Test for FormRolComponent"/>
+  <testcase name="Test for FormRolComponent should valid is not consultyes" time="0.01" classname="Chrome_84_0_4147_89_(Windows_10).Test for FormRolComponent"/>
+  <testcase name="Test for FormRolComponent should valid is consultyes" time="0.016" classname="Chrome_84_0_4147_89_(Windows_10).Test for FormRolComponent"/>
+  <testcase name="Test for FormRolComponent should valid field rol when it has a special characteryes" time="0.011" classname="Chrome_84_0_4147_89_(Windows_10).Test for FormRolComponent should valid field rol"/>
+  <testcase name="Test for FormRolComponent should valid field rol when you have a name with more than 30 charactersyes" time="0.01" classname="Chrome_84_0_4147_89_(Windows_10).Test for FormRolComponent should valid field rol"/>
+  <testcase name="Test for FormRolComponent should save rol sendPermissionsAndRolyes" time="0.016" classname="Chrome_84_0_4147_89_(Windows_10).Test for FormRolComponent should save rol"/>
+  <testcase name="Test for FormRolComponent should save rol Save rol whith data sendPermissionsAndRolyes" time="0.016" classname="Chrome_84_0_4147_89_(Windows_10).Test for FormRolComponent should save rol Save rol whith data"/>
+  <testcase name="TreePermissionsComponent should createyes" time="0.016" classname="Chrome_84_0_4147_89_(Windows_10).TreePermissionsComponent"/>
+  <testcase name="TreePermissionsComponent Execute nodesListMainyes" time="0.013" classname="Chrome_84_0_4147_89_(Windows_10).TreePermissionsComponent Execute"/>
+  <testcase name="TreePermissionsComponent Execute addIdElementNodeyes" time="0.016" classname="Chrome_84_0_4147_89_(Windows_10).TreePermissionsComponent Execute"/>
+  <testcase name="TreePermissionsComponent Execute Value node grandfatheryes" time="0.011" classname="Chrome_84_0_4147_89_(Windows_10).TreePermissionsComponent Execute"/>
+  <testcase name="TreePermissionsComponent Execute execute metod private changeStateForNodeyes" time="0.013" classname="Chrome_84_0_4147_89_(Windows_10).TreePermissionsComponent Execute execute metod private"/>
+  <testcase name="TreePermissionsComponent Execute changesStateToggleSwich Node Grandfatheryes" time="0.017" classname="Chrome_84_0_4147_89_(Windows_10).TreePermissionsComponent Execute changesStateToggleSwich"/>
+  <testcase name="TreePermissionsComponent Execute changesStateToggleSwich Node Fatheryes" time="0.019" classname="Chrome_84_0_4147_89_(Windows_10).TreePermissionsComponent Execute changesStateToggleSwich"/>
+  <testcase name="TreePermissionsComponent Execute changesStateToggleSwich Node Fatheryes" time="0.014" classname="Chrome_84_0_4147_89_(Windows_10).TreePermissionsComponent Execute changesStateToggleSwich"/>
+  <testcase name="ErrorsService should be createdyes" time="0.004" classname="Chrome_84_0_4147_89_(Windows_10).ErrorsService"/>
+  <testcase name="BadRequestComponent should createyes" time="0.009" classname="Chrome_84_0_4147_89_(Windows_10).BadRequestComponent"/>
+  <testcase name="NotFoundComponent should createyes" time="0.013" classname="Chrome_84_0_4147_89_(Windows_10).NotFoundComponent"/>
+  <testcase name="UnauthorizedComponent should createyes" time="0.01" classname="Chrome_84_0_4147_89_(Windows_10).UnauthorizedComponent"/>
+  <system-out>
+    <![CDATA[Chrome 84.0.4147.89 (Windows 10) WARN: 'Spec 'EventsForms should create an instance' has no expectations.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: 'Spec 'Group should create an instance' has no expectations.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: 'Spec 'Group should create an instance' has no expectations.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: 'Spec 'User should create an instance' has no expectations.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: ''app-form-estate-unit' is not a known element:
+1. If 'app-form-estate-unit' is an Angular component, then verify that it is part of this module.
+2. If 'app-form-estate-unit' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: 'Can't bind to 'header' since it isn't a known property of 'app-form-estate-unit'.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: 'Can't bind to 'buttonName' since it isn't a known property of 'app-form-estate-unit'.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: ''app-form-independent-unit' is not a known element:
+1. If 'app-form-independent-unit' is an Angular component, then verify that it is part of this module.
+2. If 'app-form-independent-unit' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: 'Can't bind to 'seeView' since it isn't a known property of 'app-form-independent-unit'.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: 'Can't bind to 'tittle' since it isn't a known property of 'app-form-independent-unit'.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: ''app-form-create' is not a known element:
+1. If 'app-form-create' is an Angular component, then verify that it is part of this module.
+2. If 'app-form-create' is a Web Component then add 'CUSTOM_ELEMENTS_SCHEMA' to the '@NgModule.schemas' of this component to suppress this message.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: 'Can't bind to 'seeView' since it isn't a known property of 'app-form-create'.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: 'Can't bind to 'tittle' since it isn't a known property of 'app-form-create'.'
+,Chrome 84.0.4147.89 (Windows 10) WARN: 'Spec 'Test for Upload and Take Photo for the user should behave...' has no expectations.'
+
+]]>
+  </system-out>
+  <system-err/>
+</testsuite>

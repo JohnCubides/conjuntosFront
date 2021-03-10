@@ -1,0 +1,76 @@
+<div class="container_main">
+    <header id="header" class="main_header">
+        <div class="container_logo">
+            <img class="icon_logo" src="https://images.pexels.com/photos/3317434/pexels-photo-3317434.jpeg" alt="Logo">
+            <p class="text_logo">Pinar de Suba II</p>
+        </div>
+
+        <div class="container_user_menu">
+            <span [matMenuTriggerFor]="menu">
+                <i class="material-icons notranslate cursor-pointer">
+                    add
+                </i>
+            </span>
+
+            <mat-menu #menu="matMenu" class="menu-profile" xPosition="before">
+                <div class="t-align-end close">
+                    <i class="material-icons notranslate f-size-icon cursor-pointer" click="someMethod()"> clear </i>
+                </div>
+
+                <button mat-menu-item> Cambiar datos </button>
+                <button mat-menu-item> Cambiar contraseña </button>
+                <button mat-menu-item> Cambiar unidad inmobiliaria </button>
+                <button mat-menu-item class="exit" (click)="logout()">Salir</button>
+            </mat-menu>
+
+            <img class="user" src="https://images.pexels.com/photos/3317434/pexels-photo-3317434.jpeg" alt="Logo">
+
+            <div class="font-10 text-user">
+                <span> Usuario / Administrador </span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <button class="btn-menu" (click)="matDrawer.open()" *ngIf="!matDrawer.opened">
+            <i class="material-icons icon-open-menu notranslate"> menu </i>
+        </button>
+
+        <mat-drawer-container class="mat-container">
+            <mat-drawer mode="side" #matDrawer>
+                <div class="close-menu" (click)="matDrawer.close()">
+                    <i class="material-icons notranslate"> clear </i>
+                </div>
+
+                <mat-accordion>
+                    <mat-expansion-panel *ngFor="let item of routes; let i = index;">
+                        <mat-expansion-panel-header>
+                            <mat-panel-title>
+                                <i class="material-icons notranslate icon-accordion"> {{ item.icon }} </i>
+                                {{ item.description }}
+                            </mat-panel-title>
+                        </mat-expansion-panel-header>
+
+                        <ul>
+                            <li *ngFor="let item1 of routes2[i]" class="list-menu">
+                                <a [routerLink]="item1.path">
+                                    <span>{{ item1.description }}</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </mat-expansion-panel>
+                </mat-accordion>
+            </mat-drawer>
+
+            <div class="container-content">
+                <app-breadcrumb class="breadcrumb"></app-breadcrumb>
+                <router-outlet></router-outlet>
+            </div>
+        </mat-drawer-container>
+    </main>
+
+    <footer id="footer" class="main_footer">
+        <p class="copyright"> app bits | todos los derechos reservados| copyright &copy; 2020 | creado por: </p>
+        <img src="assets/images/logo_bits_white.svg" class="logo-bits-footer" alt="Logo BITS">
+    </footer>
+</div>

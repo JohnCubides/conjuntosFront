@@ -1,0 +1,99 @@
+<div class="login_component login_layout">
+    <div class="slider_layout">
+        <div class="slider_container">
+            <img src="{{image}}" alt="Conjunto residencial bits">
+        </div>
+    </div>
+
+    <main class="main_layout login">
+        <!-- FLIPCARD -->
+        <div id="form_login_recovery" class="flipcard" [class.active]="flipcard">
+            <!-- FRONT CARD -->
+            <div id="login" class="front_card item_card">
+                <div class="card_container_front">
+                    <img src="assets/images/imglogin.jpg" class="avatar" alt="logo company" />
+                    <h2 class="login_title" id="sesion">Iniciar sesión</h2>
+
+                    <form [formGroup]="user" class="login_form">
+                        <div class="item_form">
+                            <input type="text" placeholder=" " id="userName" formControlName="userName" requerid />
+                            <label for="userName" class="icon_person_1 icon_1"> Usuario/Correo </label>
+                            <mat-error *ngIf="petitionLogin" id="error_login_1_{{idErrorMessage}}" class="icon_alert_1">
+                                {{frontErrorMessage}}
+                            </mat-error>
+                        </div>
+
+                        <div class="item_form">
+                            <input type="password" placeholder=" " id="password" formControlName="password" requerid />
+                            <label for="password" class="icon_padlock_1 icon_1"> Contraseña </label>
+                            <mat-error *ngIf="petitionLogin" id="error_login_2_{{idErrorMessage}}" class="icon_alert_1">
+                                {{frontErrorMessage}}
+                            </mat-error>
+                        </div>
+                        <div class="submit_item" [class.input_shadow]="!user.invalid">
+                            <input id="buttonLogin" type="submit" (click)="login()" [disabled]="user.invalid" class="login_button" value="Ingresar" />
+                        </div>
+                    </form>
+
+                    <button class="forgot_password" id="forget" (click)="animateForm()">¿Olvidaste tu contraseña?</button>
+                </div>
+
+                <div class="locked" *ngIf="locked" id="locked_{{idErrorMessage}}">
+                    <p>{{frontErrorMessage}}</p>
+                </div>
+            </div>
+
+
+            <!-- BACK CARD -->
+            <div id="recover" class="back_card item_card">
+                <div class="card_container_back" [class.request]="isSendMail">
+                    <img src="assets/images/imglogin.jpg" class="avatar" alt="Logo company" />
+                    <h2 id="recoverpasssword" class="recover_title">Recuperar contraseña</h2>
+                    <div class="recover_description">
+                        <p *ngIf="!isSendMail" class="icon_edit_2">
+                            <span id="recover_description_1">
+                                Ingrese número de documento o correo electrónico para restablecer contraseña.
+                            </span>
+                        </p>
+                        <p *ngIf="isSendMail" class="icon_edit_2">
+                            <span id="recover_description_2">
+                                Debes tener un nuevo email en tu correo electrónico {{ mailDocument }} para que puedas restablecer la contraseña
+                            </span>
+                        </p>
+                    </div>
+                    <div class="recovery_form" *ngIf="!isSendMail">
+                        <form [formGroup]="recover">
+                            <div class="form_item">
+                                <input type="text" placeholder=" " id="mailOrDocument" formControlName="mailOrDocument" requerid />
+                                <label for="mailOrDocument"></label>
+                                <mat-error *ngIf="petitionRecover" id="error_recovery_{{idErrorMessage}}" class="icon_alert_1">
+                                    {{frontErrorMessage}}
+                                </mat-error>
+                            </div>
+                            <div class="submit_item" [class.input_shadow]="!recover.invalid">
+                                <input id="buttonRecover" type="submit" (click)="recoverForm()" [disabled]="recover.invalid" class="recovery_button" value="Enviar" />
+                            </div>
+                        </form>
+                    </div>
+
+                    <button id="return" class="login_back" (click)="animateForm()">
+                        <div class="align_icon_content icon_back_1">
+                            Volver
+                        </div>
+                    </button>
+
+                    <div class="help_recovery" id="help_recovery" (mouseover)="viewToolTip()" (mouseout)="noViewToolTip()">
+                        <span class="recovery_tooltip" [class.active]="tooltipHelp">
+                            <div class="tooltip_content">
+                                Ingrese en el campo el tipo de documento con el número de documento (ej: CE123456) o el correo electrónico (ej: correo@correo.com) del usuario.
+                            </div>
+                        </span>
+                        <div class="icon_help_1" id="help"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- END FLIPCARD -->
+
+    </main>
+</div>

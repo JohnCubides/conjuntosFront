@@ -1,0 +1,311 @@
+@import "instance";
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr;
+    .header {
+        margin-bottom: 30px;
+        display: grid;
+        color: $c1;
+        grid-template: {
+            areas: "colm1 colm2";
+            columns: repeat(2, 1fr);
+            rows: repeat(2, auto);
+        }
+        .colm1 {
+            @include justify-content(flex-start);
+            @include flex;
+            h1 {
+                @include font(szrem(30), $f2, normal, normal, 1.2);
+            }
+        }
+        .colm2 {
+            @include wh(auto, 32px);
+            @include flex;
+            @include justify-content(flex-end);
+            @include align-items(center);
+            display: grid;
+            grid-template: {
+                columns: 104px 94px auto;
+                areas: "colm21 colm22 colm23";
+            }
+            @include brp(576) {
+                grid-template: {
+                    areas: "colm22 colm23";
+                    columns: 48px auto;
+                }
+            }
+            .colm21 {
+                margin-bottom: 0px;
+                @include brp(576) {
+                    display: none;
+                }
+            }
+            .colm23 {
+                @include position;
+                @include flex;
+                button {
+                    @include position;
+                    @include transition(width $t1 linear);
+                    @include wh(37px, 32px);
+                    @include border-radius(5px);
+                    background-color: $c3;
+                    margin-left: 10px;
+                    cursor: pointer;
+                    color: $c1;
+                    &:hover {
+                        @include transition(width $t1 linear);
+                        width: 47px;
+                    }
+                }
+                .add_tooltip {
+                    @extend %tooltip_2;
+                }
+            }
+        }
+    }
+    .bitstable {
+        @include justify-content(center);
+        @include flex;
+        margin: 0 0 40px;
+        .mytable {
+            @include wh(100%);
+            border-collapse: separate;
+            background: none;
+            &:hover {
+                @include box-shadow(0 0 17px 3px $c32);
+            }
+            &.is_action {
+                tr {
+                    td {
+                        &:last-child {
+                            padding-right: 0px;
+                            justify-content: center;
+                            display: flex;
+                            height: inherit;
+                            align-items: center;
+                        }
+                    }
+                }
+            }
+            thead {
+                tr {
+                    height: 60px;
+                }
+            }
+            tr {
+                @include wh(100%, 60px);
+                &:nth-child(odd) {
+                    background-color: $c13;
+                }
+                &:nth-child(even) {
+                    background-color: $c14;
+                }
+                th {
+                    @include text(center);
+                    @include no-margins;
+                    background-color: $c28;
+                    color: $c1;
+                    @include font(szrem(17));
+                }
+                td {
+                    .bitscell {
+                        @include center-flex-row;
+                        a,
+                        p {
+                            @include font(szrem(16), $f1, 300);
+                            color: $c1;
+                            margin: 0;
+                        }
+                        .btn_actions {
+                            @include border-radius(50%);
+                            @include center-flex-row;
+                            @include whs(30px);
+                            button {
+                                @include position;
+                                @include whs(30px);
+                                background-position: center;
+                                background-color: $c0;
+                                cursor: pointer;
+                            }
+                            input[type="checkbox"] {
+                                @include user-select(none);
+                                display: none;
+                                &:checked {
+                                    +label {
+                                        &:before {
+                                            background-color: $c3;
+                                            border-color: $c3;
+                                        }
+                                        &:after {
+                                            @include transform(scale(1));
+                                        }
+                                    }
+                                }
+                            }
+                            label {
+                                @include user-select(none);
+                                @include center-flex-column;
+                                @include whs(100%);
+                                @include position;
+                                cursor: pointer;
+                                &:before {
+                                    @include position(absolute, auto, auto);
+                                    @include whs(16px);
+                                    border-style: solid;
+                                    border-width: 1px;
+                                    border-color: $c1;
+                                    background-color: $c0;
+                                    content: "";
+                                }
+                                &:after {
+                                    @include transform(scale(0));
+                                    border-style: none;
+                                    content: "";
+                                }
+                            }
+                        }
+                        .colIndex0 {
+                            text-align: center;
+                            color: $c1;
+                            &.link {
+                                text-decoration-line: underline;
+                            }
+                        }
+                        .shading-row {
+                            opacity: 0.4;
+                        }
+                        .mat-checkbox {
+                            padding-left: 12px;
+                        }
+                    }
+                }
+            }
+            &.retract {
+                .desktop_hide {
+                    display: none;
+                    @include brp($b5) {
+                        display: inline-block;
+                    }
+                }
+                .open_retract_js {
+                    display: none;
+                    @include brp($b5) {
+                        cursor: pointer;
+                        display: block;
+                    }
+                }
+                .movile_hide {
+                    @include brp($b5) {
+                        display: none;
+                    }
+                }
+                &.is_action {
+                    tr {
+                        td {
+                            &:last-child {
+                                @include brp($b5) {
+                                    @include justify-content(flex-end);
+                                    padding-right: 15px;
+                                    width: 50%;
+                                    order: 2;
+                                }
+                            }
+                        }
+                    }
+                }
+                td {
+                    @include brp($b5) {
+                        @include center-flex-row;
+                        width: 100%;
+                        order: 3;
+                    }
+                }
+                .hide_js {
+                    .content_js {
+                        @include brp($b5) {
+                            @include transition(all 500ms ease);
+                            min-height: 0;
+                            opacity: 0;
+                        }
+                        &:last-child {
+                            @include brp($b5) {
+                                @include justify-content(flex-end);
+                                @include flex;
+                                padding-right: 15px;
+                            }
+                        }
+                    }
+                }
+                .content_js {
+                    @include brp($b5) {
+                        @include transition(all 500ms ease);
+                        min-height: 60px;
+                        opacity: 1;
+                    }
+                }
+                .item_js {
+                    @include brp($b5) {
+                        @include flex-direction;
+                        @include flex;
+                        flex-wrap: wrap;
+                        height: auto;
+                    }
+                }
+                .no_move_js {
+                    @include brp($b5) {
+                        @include align-self(center);
+                        min-height: 60px;
+                        width: 50%;
+                        order: 1;
+                    }
+                }
+                .bits_icon {
+                    @include brp($b5) {
+                        display: flex;
+                        margin-left: 12px;
+                    }
+                }
+            }
+            &.no_retract_js {
+                .open_retract_js {
+                    display: none;
+                }
+            }
+        }
+    }
+    .pagination {
+        @include center-flex-row;
+        color: $c1;
+        margin-top: 45px;
+        div {
+            display: grid;
+            grid-template: {
+                areas: "colm1 colm2 colm3";
+                columns: auto;
+            }
+            .colm {
+                @include center-flex-row;
+            }
+            .colm2 {
+                margin-left: 10px;
+                margin-bottom: 0px;
+                color: $c3;
+            }
+            .colm3 {
+                padding-left: 19px;
+            }
+        }
+    }
+    .error {
+        img {
+            max-height: 50vh;
+        }
+        h2 {
+            color: $c1;
+            margin: auto;
+            display: block;
+            width: fit-content;
+        }
+    }
+}

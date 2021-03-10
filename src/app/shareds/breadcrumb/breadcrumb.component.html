@@ -1,0 +1,5 @@
+<ul class="container_breadcrumb" id="b_list_items">
+    <li [routerLinkActive]="['u-bold']" [routerLinkActiveOptions]="{exact: true}" [routerLink]="breadcrumb.url" *ngFor="let breadcrumb of breadcrumbs; last as last" id="b_list" class="item">
+        <a id="b_item" [ngClass]="{'span-without-after': last}" class="object">{{ breadcrumb.label }}</a>
+    </li>
+</ul>

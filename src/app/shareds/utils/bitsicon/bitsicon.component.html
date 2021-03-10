@@ -1,0 +1,8 @@
+<mat-icon *ngIf="element.icon">
+    {{element.icon}}
+</mat-icon>
+<mat-icon *ngIf="element.svgIconUrl" svgIcon="{{element.svgIcon}}" class="forms-{{element.class}}">
+</mat-icon>
+<a *ngIf="!element.svgIconUrl && !element.icon">
+    <em class="icon-{{element.class}}"></em>
+</a>

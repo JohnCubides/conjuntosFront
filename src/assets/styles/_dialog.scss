@@ -1,0 +1,83 @@
+    .stylesDialog {
+        width: 100%;
+        .mat-dialog-container {
+            padding: 0;
+            // background: red;
+            overflow: hidden;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            height: 500px;
+            .navbarDialog {
+                height: 15%;
+                width: 100%;
+                background: #002d3a;
+                display: flex;
+                position: relative;
+                -webkit-box-shadow: 0px 9px 5px 0px rgba(0, 0, 0, 0.34);
+                -moz-box-shadow: 0px 9px 5px 0px rgba(0, 0, 0, 0.34);
+                box-shadow: 0px 9px 5px 0px rgba(0, 0, 0, 0.34);
+                h2 {
+                    align-items: center;
+                    color: white;
+                    display: flex;
+                    margin-left: 20px;
+                    margin-bottom: 0px;
+                }
+                button {
+                    float: right;
+                    margin: auto 20px auto auto;
+                }
+            }
+            .contentDialog {
+                background: #002d3a;
+                height: 70%;
+                width: 100%;
+                color: white;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+            }
+            .footerDialog {
+                height: 15%;
+                width: 100%;
+                background: #002d3a;
+                display: flex;
+                position: relative;
+                -webkit-box-shadow: 0px -9px 5px 0px rgba(0, 0, 0, 0.34);
+                -moz-box-shadow: 0px -9px 5px 0px rgba(0, 0, 0, 0.34);
+                box-shadow: 0px -9px 5px 0px rgba(0, 0, 0, 0.34);
+                h2 {
+                    align-items: center;
+                    color: white;
+                    display: flex;
+                    margin-left: 20px;
+                    margin-bottom: 0px;
+                }
+                button {
+                    float: right;
+                    margin: auto 20px auto auto;
+                }
+            }
+        }
+    }
+    
+    @media screen and (max-width: 576px) {
+        .cdk-global-overlay-wrapper {
+            .cdk-overlay-pane.stylesDialog {
+                width: 100%;
+                transform: none;
+            }
+        }
+        .stylesDialog {
+            .mat-dialog-container {
+                background: none;
+                height: 100vh;
+                .footerDialog {
+                    button {
+                        margin: auto;
+                    }
+                }
+            }
+        }
+    }

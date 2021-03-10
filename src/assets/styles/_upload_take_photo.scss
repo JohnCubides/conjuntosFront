@@ -1,0 +1,17 @@
+.customize {
+    .mat-menu-content {
+        background: #276980;
+    }
+    .mat-menu-item {
+        color: white;
+    }
+    &.disabledUserForm {
+        display: none;
+    }
+}
+
+.testlitle {
+    .mat-menu-panel {
+        background: none;
+    }
+}

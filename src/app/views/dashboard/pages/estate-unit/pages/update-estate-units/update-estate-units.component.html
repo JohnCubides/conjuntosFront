@@ -1,0 +1,2 @@
+<app-form-estate-unit (formEmit)='formEmit($event)' (resultEstateUnit)='update($event)' [header]='header' [buttonName]='btnName' [unitModel]='unitModel' *ngIf="unitModel"></app-form-estate-unit>
+<app-modal-notification [modalNotification]='modal' *ngIf="modal.actionModal"></app-modal-notification>

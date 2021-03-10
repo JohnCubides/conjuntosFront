@@ -1,0 +1,2 @@
+<app-form-unit-users (formEmit)='formUser($event)' [userForm]='user' (resultForm)='updatePeople($event)' [buttonName]='buttonName' [header]='header' *ngIf='user'></app-form-unit-users>
+<app-modal-notification [modalNotification]='modal ' *ngIf="modal.actionModal"></app-modal-notification>

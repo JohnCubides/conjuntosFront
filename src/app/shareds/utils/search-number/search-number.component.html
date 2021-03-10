@@ -1,0 +1,4 @@
+<div class="changes-number">
+    <input type="number" placeholder="0000" #number [value]="searchNumber" (keyup.enter)="changesNumber(number.value)" id="ipt--{{ searchNumber }}">
+    <div class="icon hidemobile icon_enter" (click)="changesNumber(number.value)"></div>
+</div>

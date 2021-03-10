@@ -1,0 +1,125 @@
+@import "instance";
+
+.container_filter {
+    @include position(absolute, 0, 0, top, right);
+    @include wh(-webkit-fill-available);
+    display: inline-block;
+    z-index: 1;
+
+    .filter_action { padding: 15px; }
+
+    &.background_filter {
+        background-color: $c29;
+        z-index: 2;
+
+        &:hover { @include box-shadow(1px 9px 27px -2px $c2); }
+    }
+
+    .empty {
+        p {
+            color: $c1;
+            font-size: 4vh;
+        }
+
+        img { max-height: 50vh; }
+    }
+}
+
+.filter_element {
+    @include font(szrem(16), $f1, 300);
+    display: grid;
+    background-color: $c0;
+    height: 40px;
+    color: $c1;
+    grid-template: {
+        columns: auto 48px;
+        areas: "colm1 colm2";
+    }
+    .colm1 {
+        background-image: none;
+        .search {
+            @include wh(44px, 100%);
+            @include transition(left 1s linear);
+            background-color: transparent;
+            position: relative;
+            left: 100%;
+        }
+        .search_data {
+            @include wh(0px, 99%);
+            caret-color: $c26;
+            color: $c26;
+            background-color: transparent;
+            @include placeholder {
+                color: $c26;
+                opacity: 0.6;
+                @include flex;
+                @include align-items(center);
+                @include justify-content(center);
+                @include text(center);
+                @include font(szrem(16), $f1, 300);
+            }
+            position: relative;
+            transition: width 2s,
+            left 2s;
+            left: 100%;
+            top: -14px;
+        }
+    }
+    .colm2 {
+        @include border-radius(4px);
+        @include wh(47px, 38px);
+        background-color: $c3;
+        position: relative;
+    }
+    &.transaction_filter {
+        background-color: $c13;
+        .colm1 {
+            .search {
+                left: 0px;
+            }
+            .search_data {
+                width: 94%;
+                left: 0px;
+                @include font(szrem(16), $f1, 300);
+            }
+        }
+        .colm2 {
+            cursor: pointer;
+            background-color: $c0;
+            &:hover {
+                @include border-radius(0 4px 4px 0);
+                background-color: $c14;
+            }
+        }
+    }
+}
+
+.data_filter {
+    color: $c1;
+    height: 39px;
+    display: grid;
+    grid-template: {
+        columns: 46px auto;
+        areas: "colm1 colm2";
+    }
+    @include font(szrem(16), $f1, 300);
+    .colm1 {
+        @include flex;
+        @include align-items(center);
+        @include justify-content(center);
+    }
+    .colm2 {
+        @include align-items(center);
+        @include flex;
+    }
+    &:hover {
+        background-color: $c14;
+        cursor: pointer;
+    }
+}
+
+.select_filter {
+    @include scroll($c16);
+    min-height: 0px;
+    max-height: 392px;
+}

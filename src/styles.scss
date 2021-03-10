@@ -1,0 +1,46 @@
+@import "assets/sass/core/variables";
+@import "assets/sass/core/base";
+@import "assets/sass/core/mediaqueries";
+@import "assets/sass/core/fonts";
+@import "assets/sass/core/reset";
+@import "assets/sass/core/keyframes";
+@import "assets/sass/core/layout";
+@import "assets/sass/core/mixin";
+@import "assets/sass/core/silent_class";
+
+// style necesario para mat-menu en componente cam
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+//components TODO: Revisar esta estructura
+@import "assets/styles/dialog";
+@import "assets/styles/upload_take_photo";
+@import "assets/styles/principal-layout";
+@import "assets/styles/create_user";
+@import "assets/styles/style_icon";
+@import "assets/styles/button-form";
+
+// Global style
+body {
+    @include font(szrem(14), $f1, normal, normal, 20px);
+    background-color: $c8;
+
+    &.account_login {
+        @include brp($b5) {
+            background-color: $c1;
+        }
+    }
+}
+
+.title_component { @extend %title_2; }
+
+img,
+i[class^="fa"] {
+    user-select: none; // TODO: Remover cuando iconos esten  por interface
+}
+
+.mat-button { background-color: transparent; } // TODO: Remover ya que no se están usando
+
+// TODO: Remover cuando se remueva la librería de material
+.mat-drawer-container { background-color: transparent; }
+
+// TODO: fin de global para material

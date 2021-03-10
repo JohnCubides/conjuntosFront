@@ -1,0 +1,2 @@
+<app-form-estate-unit [unitModel]='estateUnit' *ngIf="estateUnit" (resultEstateUnit)='closeStateUnit($event)' [header]='header'></app-form-estate-unit>
+<app-modal-notification [modalNotification]='modal' *ngIf="modal.actionModal"></app-modal-notification>

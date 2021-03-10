@@ -1,0 +1,29 @@
+<div [id]="modalBasic.idModal" aria-hidden="true" class="c-modal">
+    <div tabindex="-1" data-micromodal-close class="c-modal_overlay">
+        <div role="dialog" aria-modal="true" aria-labelledby="modal-1-title" class="c-modal_container c-modal_container--info" #btnClose>
+            <div class="c-modal_cont">
+                <div class="cont-title-sec text-center header-modal">
+                    <div class="header">
+                        <h3 class="color-blue-dark" id="hHeader">
+                            {{ modalBasic.header | translate }}
+                        </h3>
+                    </div>
+                    <div class="btn-header">
+                        <bits-button [element]='cloneClose' class="btnClear1"></bits-button>
+                    </div>
+                </div>
+
+                <div class="d-flex justify-content-center container-modal">
+                    <p class="text-center">
+                        <ng-content select="[content]"></ng-content>
+                    </p>
+                </div>
+
+                <div class="cont-title-sec text-center footer-modal" *ngIf="modalBasic.showFooter">
+                    <ng-content select="[footer]" class="d-flex btns-footer"></ng-content>
+                </div>
+            </div>
+            <bits-button [element]='modalBasic.btnClose' class="c-modal_close btnClear2"></bits-button>
+        </div>
+    </div>
+</div>

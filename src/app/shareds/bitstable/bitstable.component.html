@@ -1,0 +1,60 @@
+<div class="container">
+    <div class="header">
+        <div class="colm1">
+            <h1 id="h--title-name-{{ settingsTitle.id }}" *ngIf="settingsTitle">{{ settingsTitle.name | translate }}</h1>
+        </div>
+        <div class="colm2">
+            <p class="colm21" *ngIf="settingsTitle && !error" id="p--registry-{{ settingsTitle.id }}">{{ 'NUMBER_RECORDS' | translate}}</p>
+            <app-search-number class="colm22" *ngIf="paginator && !error" [searchNumber]='paginator.quantityToShow' (responseSearchNumber)='changePages($event)'></app-search-number>
+            <div class="colm23" *ngIf="settingsTitle && settingsTitle.create">
+                <button [routerLink]="[ routeElement(settingsTitle.create) ]" #createAdd id="btn--add-{{ settingsTitle.id }}" (mouseover)="tooltipAdd = true" (mouseout)="tooltipAdd = false" class="icon_add"></button>
+                <span class="add_tooltip" [class.active]="tooltipAdd" *ngIf="settingsTitle.create.tooltip">
+                    <div class="tooltip_content">
+                        {{ settingsTitle.create.tooltip | translate }}
+                    </div>
+                </span>
+            </div>
+        </div>
+    </div>
+    <div class="bitstable" *ngIf="displayedColumns && settingsTitle && !error" #rootForm>
+        <table class="retract retract_js mytable {{ isAction }} {{ displayedColumns.length > 2 ? '' : 'no_retract_js'}}" id="tbl--{{ settingsTitle.id }}" summary="">
+            <thead>
+                <tr class="movile_hide">
+                    <th *ngFor="let disCol of displayedColumns; let colIndex = index" id="th--{{ settingsTitle.id }}-{{ colIndex }}">{{ disCol | translate }}</th>
+                </tr>
+            </thead>
+
+            <tbody>
+                <tr *ngFor="let element of dataSource" class="item_js">
+                    <td *ngFor="let disCol of displayedColumns; let colIndex = index; let last = last;" class="{{ colIndex === 0 || last ? 'colIndex0 no_move_js' : 'content_js'}}">
+                        <div class="bitscell" *ngFor="let cell of element[disCol]">
+                            <p class="{{ cell.class }} {{ colIndex === 0 ? 'colIndex0' : ''}}" *ngIf="cell.type === 'text'" id="p--{{cell.id}}">
+                                {{ cell.text | translate }}
+                            </p>
+                            <a class="{{ cell.class }} {{ colIndex === 0 ? 'colIndex0 link' : ''}}" *ngIf="cell.type === 'link'" id="a--{{cell.id}}" [routerLink]="[ routeElement(cell) ]">{{ cell.text | translate }}</a>
+                            <div class="btn_actions " *ngIf="(cell.type === 'checkbox' || cell.type === 'button') && cell.visible">
+                                <button class="button_cell {{ styleResponsive(cell.id, cell.class) }}" id="{{cell.id}}" *ngIf="cell.type === 'button'" (click)="resultActions(cell.id, undefined)">
+                                    {{ cell.text | translate }}
+                                </button>
+                                <input type="checkbox" id="{{ cell.id }}" *ngIf="cell.type === 'checkbox'" [checked]="cell.state" (change)="resultActions(cell.id, $event)" class="checkbox_cell">
+                                <label for="{{ cell.id }}" class="icon_select" *ngIf="cell.type === 'checkbox'"></label>
+                            </div>
+                        </div>
+                    </td>
+                </tr>
+            </tbody>
+
+        </table>
+    </div>
+    <div class="pagination" *ngIf="!error">
+        <div>
+            <app-bitspaginator class="colm colm1" (getPagination)='changePages($event)'></app-bitspaginator>
+            <p class="colm colm2">Ir a Pág:</p>
+            <app-search-number *ngIf="paginator" class="colm colm3" [searchNumber]='paginator.page' (responseSearchNumber)='changePages($event, true)'></app-search-number>
+        </div>
+    </div>
+    <div *ngIf="error" class="error">
+        <img src="assets/images/desktop/1.svg" alt="">
+        <h2>{{ searchEmpty | translate }}</h2>
+    </div>
+</div>

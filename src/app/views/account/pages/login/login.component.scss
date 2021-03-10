@@ -1,0 +1,234 @@
+@import "instance";
+
+.login_component {
+    @extend %slider_login;
+
+    .main_layout {
+        // flipcard
+        @include flipcard(
+            342px, 480px,
+            $c1, $c1,
+            "click"
+        );
+        @include center-flex-row;
+        background-color: $c9;
+        grid-area: main;
+
+        @include brp($b5) {
+            background-color: $c1;
+        }
+
+        .flipcard {
+            @include center-flex-row;
+            @include user-select;
+
+            @include brpwh($b5, $b7) {
+                height: 580px;
+            }
+
+            &.active {
+                @include brpwh($b5, $b7) {
+                    height: 530px;
+                }
+            }
+
+            .item_card {
+                padding: 30px;
+
+                @include brp($b5) {
+                    @include text(center);
+                }
+            }
+        }
+
+        .card_container_front {
+            @include whs(100%);
+            display: grid;
+            grid-template: {
+                rows: 90px repeat(2, auto);
+                columns: 1fr;
+                areas:
+                    "login_title"
+                    "login_form"
+                    "login_forget";
+            }
+
+            @include brp($b5) {
+                display: block;
+            }
+
+
+            .login_title {
+                @extend %title_1;
+                grid-area: login_title;
+            }
+
+            .login_form {
+                grid-area: login_form;
+
+                .item_form {
+                    @include position;
+                    @extend %input_1;
+                    margin: 52px 0;
+
+                    .icon_1 {
+                        &:before {
+                            @include transform(translate(0, -50%));
+                            left: 2px;
+                            top: 44%;
+                        }
+                    }
+
+                }
+            }
+
+            .forgot_password {
+                @extend %button_2;
+                grid-area: login_forget;
+            }
+        }
+
+        .card_container_back {
+            @include whs(100%);
+            display: grid;
+            grid-template: {
+                rows: 90px 90px repeat(2, auto);
+                columns: 1fr;
+                areas:
+                    "recover_title"
+                    "recover_description"
+                    "recover_form"
+                    "recover_forget";
+            }
+
+            @include brp($b5) {
+                display: block;
+            }
+
+            &.request {
+                grid-template: {
+                    rows: 90px 0.8fr auto;
+                    columns: 1fr;
+                    areas:
+                        "recover_title"
+                        "recover_description"
+                        "recover_forget";
+                }
+            }
+
+            .recover_title {
+                @extend %title_1;
+                grid-area: recover_title;
+            }
+
+            .recover_description {
+                @include align-self(center);
+                grid-area: recover_description;
+
+                .icon_edit_2 {
+                    @include no-margins;
+                    @include position;
+                    @include text;
+                    padding-left: 27px;
+                    display: flex;
+                }
+            }
+
+            .recovery_form {
+                grid-area: recover_form;
+                .form_item {
+                    @include position;
+                    @extend %input_1;
+                    margin: 20px 0 52px;
+
+                    @include brp($b5) {
+                        margin: 40px 0 52px;
+                    }
+
+                    .input_icon {
+                        @include whs(18px);
+                        margin-right: 11px;
+                    }
+                }
+            }
+
+            .login_back {
+                @extend %button_2;
+                grid-area: recover_forget;
+
+                .align_icon_content { @extend %align_icon_content; }
+            }
+        }
+
+        .avatar { @extend %avatar_1; }
+
+        .locked {
+            @include position(absolute, 0, 0, bottom);
+            @include transform(translate(0, 100%));
+            @include wh(100%);
+            background-color: $c10;
+            padding: 10px;
+
+            @include brpwh($b5, $b7) {
+                @include position;
+                @include transform(none);
+            }
+
+            p {
+                @include font(szrem(13));
+                color: $c1;
+                margin: 0;
+            }
+        }
+
+        .submit_item {
+            margin-top: 36px;
+
+            @include brp($b5) {
+                margin: 35px 0;
+            }
+
+            &.input_shadow {
+                &:hover { filter: drop-shadow(-2px 2px 2px $c6); }
+            }
+
+            .login_button { @extend %button_1; }
+            .recovery_button { @extend %button_1; }
+        }
+    }
+
+    .help_recovery {
+        @include whs(0);
+
+        .recovery_tooltip { @extend %tooltip_1; }
+
+        .icon_help_1 {
+            @include position(absolute, 34px, 55px, bottom, right);
+            cursor: help;
+        }
+    }
+
+    p {
+        @include text(center);
+        margin-bottom: 0px;
+        margin-top: 3rem;
+        font-size: szrem(14);
+        color: $c6;
+    }
+
+    mat-error {
+        @include position(relative, 17px);
+        @include align-self(center);
+        @include wh(100%, 18px);
+        @include flex;
+        padding-left: 20px;
+        margin-top: -17px;
+        margin-bottom: 47px;
+        font-size: szrem(13);
+        color: $c10;
+        z-index: 2;
+
+        &:before { top: 3px; }
+    }
+}
+

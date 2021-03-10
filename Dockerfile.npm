@@ -1,0 +1,46 @@
+#############
+### build ###
+#############
+
+# base image
+FROM node:latest as linuxalpine
+
+# install chrome for protractor tests
+RUN wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | apt-key add -
+RUN sh -c 'echo "deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google.list'
+RUN apt-get update && apt-get install -yq google-chrome-stable
+
+# set working directory
+WORKDIR /app
+
+# add `/app/node_modules/.bin` to $PATH
+ENV PATH /app/node_modules/.bin:$PATH
+
+# install and cache app dependencies
+COPY package.json /app/package.json
+RUN npm install
+RUN npm install -g @angular/cli
+
+# add app
+COPY . /app
+
+# run tests
+# RUN ng test --watch=false
+# RUN ng e2e --port 4202
+
+# generate build
+RUN ng build --prod --output-path=dist
+
+# stage 2
+# Imagen nginx para exponer la aplicación en el servidor web
+FROM nginx:alpine
+# Se agrega el archivo de configuracion al contenedor
+ADD nginx.conf /etc/nginx/nginx.conf
+# Se desplasa dentro de la imagen a la ruta especificada
+WORKDIR /usr/share/nginx/html
+# Se copia los archivos anteriormente generados de la imagen anterior
+COPY --from=linuxalpine /app/dist .
+# expose port 80
+EXPOSE 80
+# Se levanta el servicio de nginx exponiendose por defecto en el puerto 80 del contenedor
+CMD ["nginx", "-g", "daemon off;"]

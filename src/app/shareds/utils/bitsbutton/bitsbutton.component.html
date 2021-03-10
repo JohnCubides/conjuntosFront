@@ -1,0 +1,15 @@
+<button mat-button *ngIf="element && !element.class" id="{{element.id}}">
+  <ng-container *ngTemplateOutlet="btnIcon"></ng-container>
+</button>
+<button *ngIf="element && element.class" class="btn-{{ element.class }}" id="{{element.id}}">
+  <ng-container *ngTemplateOutlet="btnIcon"></ng-container>
+</button>
+<ng-template #btnIcon>
+    <div *ngIf="element.positionIcon && element.positionIcon === 'left'" class="divicon">
+        <bits-icon [element]="element" class="divicon"></bits-icon>
+    </div>
+    {{ element.text }}
+    <div *ngIf="element.positionIcon && element.positionIcon === 'right'" class="divicon">
+        <bits-icon [element]="element" class="divicon"></bits-icon>
+    </div>
+</ng-template>

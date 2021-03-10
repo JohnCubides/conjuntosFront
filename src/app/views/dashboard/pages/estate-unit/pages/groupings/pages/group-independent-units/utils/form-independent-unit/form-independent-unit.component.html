@@ -1,0 +1,37 @@
+<div class="container"> 
+    <h1 class="title_component" id="h--tittle-group-independent-{{ seeView }}">{{tittle | translate}}</h1>  
+    <form [formGroup]="formGroups" id="form--group-independent-{{ seeView }}" #form="ngForm" (ngSubmit)="sendData()">
+        <div class="input">
+            <label id="lbl--name-group-independent-{{ seeView }}">Nombre de unidad independiente*</label>
+            <input type="text" minlength="1" maxlength="30" name="name" id="ipt--name-group-independent-{{ seeView }}"
+                class="{{ errorMensagge !== '' && errorMensagge ? 'error-mensaje' : ''}}" formControlName="name"
+                (keypress)="validateInput('name')" (keyup)="validateInput('name')" (keydown)="validateInput('name')"
+                (focus)="validateInput('name')" required>
+            <p id="p--name-group-independent-{{ seeView }}" *ngIf="formGroups.get('name').hasError('required') && formGroups.get('name').touched">* Campo
+                requerido</p>
+        </div>
+        <div class="input">
+            <label id="lbl--cadastre-group-independent-{{ seeView }}">Número de catastro*</label>
+            <input type="text" minlength="1" maxlength="20" name="cadastre" id="ipt--cadastre-group-independent-{{ seeView }}"
+                class="{{ errorMensagge !== '' && errorMensagge ? 'error-mensaje' : ''}}" formControlName="cadastre"
+                (keypress)="validateInput('cadastre')" (keyup)="validateInput('cadastre')"
+                (keydown)="validateInput('cadastre')" (focus)="validateInput('cadastre')" required>
+            <p id="p--cadastre-group-independent-{{ seeView }}"
+                *ngIf="formGroups.get('cadastre').hasError('required') && formGroups.get('cadastre').touched">
+                * Campo requerido</p>
+        </div>
+        <div class="input">
+            <label id="lbl--squareMeter-group-independent-{{ seeView }}">Metros cuadrados*</label>
+            <input type="text" minlength="1" maxlength="5" name="squareMeter" id="ipt--squareMeter-group-independent-{{ seeView }}"
+                class="{{ errorMensagge !== '' && errorMensagge ? 'error-mensaje' : ''}}" formControlName="squareMeter"
+                (keypress)="validateInput('squareMeter')" (keyup)="validateInput('squareMeter')"
+                (keydown)="validateInput('squareMeter')" (focus)="validateInput('squareMeter')" required>
+            <p id="p--squareMeter-group-independent-{{ seeView }}"
+                *ngIf="formGroups.get('squareMeter').hasError('required') && formGroups.get('squareMeter').touched">*
+                Campo requerido</p>
+        </div>
+        <div class="btn-g">
+            <button type="submit" id="btn--save-group-independent-{{ seeView }}" [disabled]="formGroups.invalid">Guardar</button>
+        </div>
+    </form>
+</div>

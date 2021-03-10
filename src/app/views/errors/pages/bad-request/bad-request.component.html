@@ -1,0 +1,47 @@
+<div class="ctn-not-found" *ngIf="!ifScreenWidth">
+  <div class="w-50 ctn-img">
+    <img class="img" src="assets/images/face_desktop_404.svg" alt="Not-found">
+  </div>
+
+  <div class="w-50">
+    <div>
+      <span class="title">
+        error
+      </span>
+
+      <span class="t-number">
+        400
+      </span>
+    </div>
+
+    <div class="ctn-content">
+      <p class="p-content">
+        El proceso no se terminó
+        satisfactoriamente.
+        Intente nuevamente
+        en unos segundos.
+      </p>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="ifScreenWidth">
+  <div class="header-error">
+    <span class="header-error_title">
+      error 400
+    </span>
+
+    <img src="assets/icons/close_white.svg" alt="">
+  </div>
+
+  <div class="content-error">
+    <span>
+      El proceso no se terminó satisfactoriamente.
+      Intente nuevamente en unos segundos.
+    </span>
+
+    <div class="content-image-mobile">
+      <img src="assets/images/face_mobile_404.svg" alt="Not-found">
+    </div>
+  </div>
+</div>
